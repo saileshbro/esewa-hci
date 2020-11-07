@@ -18,6 +18,9 @@ class TranslationStrings {
   static const String passwordMpinInvalid = "passwordMpinInvalid";
   static const String passwordMpinRequired = "passwordMpinRequired";
   static const String mobileEmailRequired = "mobileEmailRequired";
+  static const String yourMobileNumberWill = "yourMobileNumberWill";
+  static const String fullName = "fullName";
+  static const String tac = "tac";
   static const String mobileEmailInvalid = "mobileEmailInvalid";
   static const String next = "next";
   static const String skip = "skip";
@@ -57,6 +60,7 @@ class TranslationStrings {
   static const String num6 = "6";
   static const String num7 = "7";
   static const String num8 = "8";
+  static const String proceed = "proceed";
   static const String num9 = "9";
   static const String signUp = "signUp";
   static const String login = "login";
@@ -66,6 +70,13 @@ class TranslationStrings {
   static const String forgotPassword = "forgotPassword";
   static const String rememberMe = "rememberMe";
   static const String back = "back";
+  static const String select = "select";
+  static const String gender = "gender";
+  static const String male = "male";
+  static const String female = "female";
+  static const String others = "others";
+  static const String fullNameRequired = "fullNameRequired";
+  static const String fullNameInvalid = "fullNameInvalid";
 }
 
 class AssetPaths {

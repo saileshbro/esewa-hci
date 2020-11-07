@@ -49,5 +49,16 @@
   "mobileEmailRequired": "मोबाइल नम्बर/इमेल ठेगाना जरुरी छ।",
   "mobileEmailInvalid": "मोबाइल नम्बर/इमेल ठेगाना मिलेन।",
   "passwordMpinInvalid": "पासवर्ड/Mपिन नम्बर मिलेन।",
-  "passwordMpinRequired": "पासवर्ड/Mपिन नम्बर जरुरी छ।"
+  "passwordMpinRequired": "पासवर्ड/Mपिन नम्बर जरुरी छ।",
+  "yourMobileNumberWill": "हजूरको मोबाइल नम्बर e-सेवा खाताको रूपमा प्रयोग हुनेछ।",
+  "fullName": "पूरा नाम",
+  "tac": "म [नियमावली र सर्तहरू] र {गोपनियता कार्यशैली} स्वीकार गर्छु।",
+  "gender": "लिङ्ग",
+  "select": "चयन गर्नुहोस्",
+  "male": "पुरुष",
+  "female": "महिला",
+  "others": "अन्य",
+  "proceed": "आगाडी बढ्नुहोस्",
+  "fullNameRequired": "पूरा नाम जरुरी छ।",
+  "fullNameInvalid": "पूरा नाम मिलेन।"
 }

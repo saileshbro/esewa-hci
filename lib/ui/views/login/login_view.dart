@@ -67,7 +67,6 @@ class LoginView extends StatelessWidget {
                         hintText:
                             TranslationStrings.esewaIdMovileEmail.t(context),
                         required: true,
-                        textInputType: TextInputType.phone,
                         onChanged: model.onPhoneChanged,
                         enabled: !model.isBusy,
                         validator: (value) {
@@ -86,14 +85,14 @@ class LoginView extends StatelessWidget {
                       DTextField(
                         focusNode: passwordFocusNode,
                         onEditingComplete: () =>
-                            FocusScope.of(context).unfocus(),
+                            FocusScope.of(context).requestFocus(FocusNode()),
                         label: TranslationStrings.passwordMpin.t(context),
                         hintText: TranslationStrings.passwordMpin.t(context),
                         required: true,
                         password: true,
                         textInputType: TextInputType.phone,
                         onChanged: model.onPasswordChanged,
-                        // enabled: !model.isBusy,
+                        enabled: !model.isBusy,
                         validator: (value) {
                           if (value.isEmpty) {
                             return TranslationStrings.passwordMpinRequired

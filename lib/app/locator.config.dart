@@ -32,14 +32,14 @@ Future<GetIt> $initGetIt(
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
   gh.lazySingleton<DialogService>(() => thirdPartyServicesModule.dialogService);
   gh.lazySingleton<LanguageBloc>(() => LanguageBloc());
-  gh.lazySingleton<LoginViewModel>(() => LoginViewModel());
   gh.lazySingleton<NavigationService>(
       () => thirdPartyServicesModule.navigationService);
   final sharedPreferences = await thirdPartyServicesModule.prefs;
   gh.factory<SharedPreferences>(() => sharedPreferences);
   gh.lazySingleton<SharedPreferencesService>(
       () => SharedPreferencesService(get<SharedPreferences>()));
-  gh.lazySingleton<SignupViewModel>(() => SignupViewModel());
+  gh.lazySingleton<SignupViewModel>(
+      () => SignupViewModel(get<NavigationService>()));
   gh.lazySingleton<SnackbarService>(
       () => thirdPartyServicesModule.snackbarService);
   gh.lazySingleton<StartUpViewModel>(() => StartUpViewModel(
@@ -52,6 +52,8 @@ Future<GetIt> $initGetIt(
       () => LanguageSelectViewModel(get<SharedPreferencesService>()));
   gh.lazySingleton<LoginSignupViewModel>(
       () => LoginSignupViewModel(get<NavigationService>()));
+  gh.lazySingleton<LoginViewModel>(
+      () => LoginViewModel(get<NavigationService>()));
   gh.lazySingleton<OnboardingViewModel>(() => OnboardingViewModel(
       get<NavigationService>(), get<SharedPreferencesService>()));
   return get;

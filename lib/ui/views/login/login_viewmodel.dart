@@ -1,13 +1,18 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
+import 'package:esewa_hci/app/router.gr.dart';
 import 'package:esewa_hci/common/helpers/validators.dart';
 import 'package:injectable/injectable.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 @lazySingleton
 class LoginViewModel extends CustomBaseViewModel {
+  final NavigationService _navigationService;
   String emailOrPhone = "";
   String passwordOrMPIN = "";
 
   bool rememberMe = false;
+
+  LoginViewModel(this._navigationService);
 
   bool get isPhoneValid => validatePassword(emailOrPhone);
 
@@ -32,7 +37,9 @@ class LoginViewModel extends CustomBaseViewModel {
     notifyListeners();
   }
 
-  void onSignupPressed() {}
+  void onSignupPressed() {
+    _navigationService.replaceWith(Routes.signupView);
+  }
 
   void forgotPasswordPressed() {}
 }

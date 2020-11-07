@@ -27,11 +27,13 @@ dependencies:
     sdk: flutter
   auto_route: ^0.6.9
   cupertino_icons: ^1.0.0
+  dropdown_menu: ^1.1.1
+  easy_rich_text: ^0.5.2
   equatable: ^1.2.5
   flutter_bloc: ^6.0.6
+  flutter_dropdown: ^0.0.8
   get_it: ^5.0.1
   google_fonts: ^1.1.1
-  import_js_library: ^1.0.1
   injectable: ^1.0.5
   logger: ^0.9.4
   shared_preferences: ^0.5.12+4

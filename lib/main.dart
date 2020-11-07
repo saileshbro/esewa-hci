@@ -76,9 +76,9 @@ class _MyAppState extends State<MyApp> {
               supportedLocales:
                   Constants.languages.map((e) => Locale(e.code)).toList(),
               localizationsDelegates: [
+                AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
-                AppLocalizations.delegate,
               ],
             );
           } else {

@@ -5,6 +5,13 @@ bool validatePassword(String value) {
   return true;
 }
 
+bool validateName(String value) {
+  if (value.isEmpty) {
+    return false;
+  }
+  return true;
+}
+
 bool validatePhone(String value) {
   try {
     int.tryParse(value, radix: 10);
