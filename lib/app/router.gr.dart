@@ -12,6 +12,7 @@ import 'package:esewa_hci/ui/views/home/home_view.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
+import 'package:esewa_hci/ui/views/multi_language/multi_language_select_view.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_view.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
 import 'package:esewa_hci/ui/views/settings/settings_view.dart';
@@ -34,6 +35,7 @@ class Routes {
   static const String homeView = '/home-view';
   static const String serviceCategoryView = '/service-category-view';
   static const String settingsView = '/settings-view';
+  static const String multiLanguageSelectView = '/multi-language-select-view';
   static const all = <String>{
     startUpView,
     languageSelectView,
@@ -47,6 +49,7 @@ class Routes {
     homeView,
     serviceCategoryView,
     settingsView,
+    multiLanguageSelectView,
   };
 }
 
@@ -66,6 +69,7 @@ class Router extends RouterBase {
     RouteDef(Routes.homeView, page: HomeView),
     RouteDef(Routes.serviceCategoryView, page: ServiceCategoryView),
     RouteDef(Routes.settingsView, page: SettingsView),
+    RouteDef(Routes.multiLanguageSelectView, page: MultiLanguageSelectView),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -147,6 +151,12 @@ class Router extends RouterBase {
     SettingsView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SettingsView(),
+        settings: data,
+      );
+    },
+    MultiLanguageSelectView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => MultiLanguageSelectView(),
         settings: data,
       );
     },

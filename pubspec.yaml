@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^1.1.1
   injectable: ^1.0.5
   logger: ^0.9.4
+  oktoast: ^2.3.2
   shared_preferences: ^0.5.12+4
   smooth_page_indicator: ^0.2.0
   stacked: ^1.7.6

@@ -12,6 +12,7 @@ import 'package:esewa_hci/ui/blocs/language_bloc/language_bloc.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_viewmodel.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_viewmodel.dart';
 import 'package:esewa_hci/ui/views/login/login_viewmodel.dart';
+import 'package:esewa_hci/ui/views/multi_language/multi_language_select_viewmodel.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_viewmodel.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_viewmodel.dart';
@@ -37,10 +38,13 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<AuthWelcomeViewModel>(() => AuthWelcomeViewModel());
   gh.lazySingleton<DialogService>(() => thirdPartyServicesModule.dialogService);
   gh.lazySingleton<LanguageBloc>(() => LanguageBloc());
+  gh.lazySingleton<MultiLanguageSelectViewModel>(
+      () => MultiLanguageSelectViewModel());
   gh.lazySingleton<NavigationService>(
       () => thirdPartyServicesModule.navigationService);
   gh.lazySingleton<ServiceCategoryViewModel>(() => ServiceCategoryViewModel());
-  gh.lazySingleton<SettingsViewModel>(() => SettingsViewModel());
+  gh.lazySingleton<SettingsViewModel>(
+      () => SettingsViewModel(get<NavigationService>()));
   final sharedPreferences = await thirdPartyServicesModule.prefs;
   gh.factory<SharedPreferences>(() => sharedPreferences);
   gh.lazySingleton<SharedPreferencesService>(

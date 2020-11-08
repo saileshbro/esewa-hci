@@ -31,7 +31,7 @@ class LanguageSelectView extends StatelessWidget {
                 SizedBox(height: ScreenUtil.statusBarHeight),
                 Image.asset(
                   AssetPaths.esewaLogoPath,
-                  width: double.infinity,
+                  width: ScreenUtil.screenWidth * 0.45,
                 ),
                 xlHeightSpan,
                 mHeightSpan,

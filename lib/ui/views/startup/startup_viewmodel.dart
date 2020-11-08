@@ -21,26 +21,26 @@ class StartUpViewModel extends CustomBaseViewModel {
   );
   Future<void> handleStartupViewLogic() async {
     // _sharedPreferencesService.removeOnboardingVisited();
-    await Future.delayed(Duration(seconds: 1));
-    if (_sharedPreferencesService.localeCode == null) {
-      SchedulerBinding.instance.addPostFrameCallback((timestamp) {
-        _navigationService.clearStackAndShow(Routes.languageSelectView);
-      });
-      notifyListeners();
-    } else {
-      locator<LanguageBloc>().add(ToggleLanguageEvent(
-          LanguageModel(code: _sharedPreferencesService.localeCode)));
-    }
-    if (!_sharedPreferencesService.onboardingVisited) {
-      SchedulerBinding.instance.addPostFrameCallback((timestamp) {
-        _navigationService.clearStackAndShow(Routes.onboardingView);
-      });
-      notifyListeners();
-    } else {
-      SchedulerBinding.instance.addPostFrameCallback((timestamp) {
-        _navigationService.clearStackAndShow(Routes.welcomeView);
-      });
-      notifyListeners();
-    }
+    await Future.delayed(Duration(seconds: 2));
+    // if (_sharedPreferencesService.localeCode == null) {
+    SchedulerBinding.instance.addPostFrameCallback((timestamp) {
+      _navigationService.clearStackAndShow(Routes.languageSelectView);
+    });
+    //   notifyListeners();
+    // } else {
+    //   locator<LanguageBloc>().add(ToggleLanguageEvent(
+    //       LanguageModel(code: _sharedPreferencesService.localeCode)));
+    // }
+    // if (!_sharedPreferencesService.onboardingVisited) {
+    //   SchedulerBinding.instance.addPostFrameCallback((timestamp) {
+    //     _navigationService.clearStackAndShow(Routes.onboardingView);
+    //   });
+    //   notifyListeners();
+    // } else {
+    //   SchedulerBinding.instance.addPostFrameCallback((timestamp) {
+    //     _navigationService.clearStackAndShow(Routes.welcomeView);
+    //   });
+    //   notifyListeners();
+    // }
   }
 }

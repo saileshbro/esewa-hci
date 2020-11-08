@@ -22,17 +22,13 @@ class LanguageSwitchButton extends StatelessWidget {
         width: double.maxFinite,
         decoration: BoxDecoration(
           color: isSelected ? Constants.primaryGreen : Colors.white,
-          // border: Border.all(
-          //   color: Constants.primaryGreen,
-          //   width: dimen_2.w,
-          // ),
           borderRadius: BorderRadius.circular(dimen_12.w),
-          boxShadow: getBoxShadow(context),
+          boxShadow: getBoxShadow(context, opacity: 0.2),
         ),
         padding: lPadding.add(lYPadding),
         child: Text(
           label ?? "",
-          style: Theme.of(context).textTheme.headline6.copyWith(
+          style: Theme.of(context).textTheme.headline5.copyWith(
                 fontWeight: FontWeight.bold,
                 color: isSelected ? Colors.white : Colors.black,
               ),

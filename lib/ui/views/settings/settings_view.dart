@@ -75,7 +75,7 @@ class SettingsView extends StatelessWidget {
                   AssetPaths.changeMPIN,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: model.onChangeLanguagePressed,
                 title: TranslationStrings.language.t(context),
                 subtitle: TranslationStrings.selectLanguage.t(context),
               ),
