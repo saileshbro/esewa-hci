@@ -8,14 +8,15 @@ class Constants {
   static const Color violet = Color(0xFFA74DBC);
   static const Color textFieldBackgroundColor = Color(0xFFF4F6FA);
   static const languages = [
-    LanguageModel(code: 'np', value: 'नेपाली'),
     LanguageModel(code: 'en', value: 'English'),
+    LanguageModel(code: 'np', value: 'नेपाली'),
   ];
 }
 
 class TranslationStrings {
   TranslationStrings._();
   static const String passwordMpinInvalid = "passwordMpinInvalid";
+  static const String allCategories = "allCategories";
   static const String passwordMpinRequired = "passwordMpinRequired";
   static const String mobileEmailRequired = "mobileEmailRequired";
   static const String yourMobileNumberWill = "yourMobileNumberWill";
@@ -77,6 +78,35 @@ class TranslationStrings {
   static const String others = "others";
   static const String fullNameRequired = "fullNameRequired";
   static const String fullNameInvalid = "fullNameInvalid";
+  static const String dynDear = "dynDear";
+  static const String loadMoneyIn = "loadMoneyIn";
+  static const String eSewaCashPoints = "eSewaCashPoints";
+  static const String findTheNearest = "findTheNearest";
+  static const String bankAccount = "bankAccount";
+  static const String youCanUseMobile = "youCanUseMobile";
+  static const String loadYourEsewa = "loadYourEsewa";
+  static const String dynNPR = "dynNPR";
+  static const String balance = "balance";
+  static const String rewardPoints = "rewardPoints";
+  static const String topServices = "topServices";
+  static const String otherServices = "otherServices";
+  static const String home = "home";
+  static const String statement = "statement";
+  static const String scanAndPay = "scanAndPay";
+  static const String myPayment = "myPayment";
+  static const String offers = "offers";
+  static const String loadMoney = "loadMoney";
+  static const String sendMoney = "sendMoney";
+  static const String bankTransfer = "bankTransfer";
+  static const String remittance = "remittance";
+  static const String tv = "tv";
+  static const String schoolFee = "schoolFee";
+  static const String topUp = "topUp";
+  static const String electricity = "electricity";
+  static const String drinkingWater = "drinkingWater";
+  static const String internet = "internet";
+  static const String airlines = "airlines";
+  static const String scan = "scan";
 }
 
 class AssetPaths {
@@ -93,4 +123,25 @@ class AssetPaths {
   static const String themeSelectIllustration =
       "assets/illustrations/themeSelect.png";
   static const String girlDokoImage = "assets/images/girlDoko.jpeg";
+  static const String eWalletIcon = "assets/icons/eWalletIcon.png";
+  static const String airlines = "assets/icons/airlines.png";
+  static const String bankTransfer = "assets/icons/bankTransfer.png";
+  static const String cooperativeWithdraw =
+      "assets/icons/cooperativeWithdraw.png";
+  static const String drinkingWater = "assets/icons/drinkingWater.png";
+  static const String electricity = "assets/icons/electricity.png";
+  static const String home = "assets/icons/home.png";
+  static const String internet = "assets/icons/internet.png";
+  static const String loadMoney = "assets/icons/loadMoney.png";
+  static const String myPayment = "assets/icons/myPayment.png";
+  static const String npr = "assets/icons/npr.png";
+  static const String offers = "assets/icons/offers.png";
+  static const String remittance = "assets/icons/remittance.png";
+  static const String reward = "assets/icons/reward.png";
+  static const String scan = "assets/icons/scan.png";
+  static const String schoolFee = "assets/icons/schoolFee.png";
+  static const String sendMoney = "assets/icons/sendMoney.png";
+  static const String statement = "assets/icons/statement.png";
+  static const String topUp = "assets/icons/topUp.png";
+  static const String tv = "assets/icons/tv.png";
 }

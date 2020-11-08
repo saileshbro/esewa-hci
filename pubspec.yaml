@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   auto_route: ^0.6.9
+  auto_size_text: ^2.1.0
   cupertino_icons: ^1.0.0
   dropdown_menu: ^1.1.1
   easy_rich_text: ^0.5.2
@@ -63,6 +64,7 @@ flutter:
     - assets/lang/
     - assets/illustrations/
     - assets/images/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

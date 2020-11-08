@@ -59,7 +59,9 @@ class SignupView extends StatelessWidget {
                       Text(
                         TranslationStrings.yourMobileNumberWill.t(context),
                         textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.headline6,
+                        style: Theme.of(context).textTheme.subtitle1.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                       sHeightSpan,
                       DTextField(
@@ -90,6 +92,7 @@ class SignupView extends StatelessWidget {
                         label: TranslationStrings.fullName.t(context),
                         hintText: TranslationStrings.fullName.t(context),
                         required: true,
+                        textCapitalization: TextCapitalization.words,
                         onChanged: model.onNameChanged,
                         enabled: !model.isBusy,
                         validator: (value) {
@@ -131,7 +134,7 @@ class SignupView extends StatelessWidget {
                             child: EasyRichText(
                               TranslationStrings.tac.t(context),
                               defaultStyle:
-                                  Theme.of(context).textTheme.subtitle1,
+                                  Theme.of(context).textTheme.bodyText2,
                               patternList: [
                                 EasyRichTextPattern(
                                   targetString: r"\[(.*)\]",
@@ -142,10 +145,11 @@ class SignupView extends StatelessWidget {
                                     },
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle1
+                                      .bodyText2
                                       .copyWith(
                                         color: Theme.of(context).primaryColor,
                                         decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                 ),
                                 EasyRichTextPattern(
@@ -156,10 +160,11 @@ class SignupView extends StatelessWidget {
                                     },
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle1
+                                      .bodyText2
                                       .copyWith(
                                         color: Theme.of(context).primaryColor,
                                         decoration: TextDecoration.underline,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                 ),
                               ],
@@ -192,9 +197,11 @@ class SignupView extends StatelessWidget {
                               TranslationStrings.login.t(context),
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6
+                                  .subtitle1
                                   .copyWith(
                                     color: Theme.of(context).primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.35,
                                     decoration: TextDecoration.underline,
                                   ),
                             ),
@@ -205,9 +212,11 @@ class SignupView extends StatelessWidget {
                               TranslationStrings.back.t(context),
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6
+                                  .subtitle1
                                   .copyWith(
                                     color: Theme.of(context).primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.35,
                                     decoration: TextDecoration.underline,
                                   ),
                             ),

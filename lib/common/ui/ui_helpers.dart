@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+export '../extensions/extensions.dart';
 
 // --- vertical spacing ---
 SizedBox xxsHeightSpan = SizedBox(height: dimen_2);
@@ -59,6 +60,7 @@ const double dimen_20 = 20;
 const double dimen_24 = 24;
 const double dimen_30 = 30;
 const double dimen_32 = 32;
+const double dimen_34 = 34;
 const double dimen_40 = 40;
 const double dimen_48 = 48;
 const double dimen_58 = 58;
@@ -71,18 +73,20 @@ const double dimen_150 = 150;
 const double dimen_200 = 200;
 const double dimen_230 = 230;
 const double dimen_300 = 300;
-List<BoxShadow> getBoxShadow(BuildContext context, {Color color}) {
+List<BoxShadow> getBoxShadow(BuildContext context,
+    {Color color, double opacity}) {
   return [
     if (Theme.of(context).brightness == Brightness.light)
       BoxShadow(
-        offset: const Offset(0, 4),
-        blurRadius: dimen_20,
-        color: (color ?? Theme.of(context).primaryColor).withOpacity(0.37),
+        blurRadius: dimen_10,
+        color: (color ?? Theme.of(context).primaryColor)
+            .withOpacity(opacity ?? 0.37),
       )
     else
       BoxShadow(
         blurRadius: dimen_4,
-        color: (color ?? Theme.of(context).primaryColor).withOpacity(0.6),
+        color: (color ?? Theme.of(context).primaryColor)
+            .withOpacity(opacity ?? 0.6),
       ),
   ];
 }

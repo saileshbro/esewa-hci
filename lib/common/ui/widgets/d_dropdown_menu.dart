@@ -42,7 +42,7 @@ class _DDropDownMenuState extends State<DDropDownMenu> {
                   ? Padding(
                       padding: const EdgeInsets.only(bottom: 4.0),
                       child: Text(widget.label,
-                          style: Theme.of(context).textTheme.subtitle1),
+                          style: Theme.of(context).textTheme.bodyText2),
                     )
                   : SizedBox.shrink(),
               widget.isRequired
@@ -50,7 +50,7 @@ class _DDropDownMenuState extends State<DDropDownMenu> {
                       padding: const EdgeInsets.only(bottom: 4.0, left: 4.0),
                       child: Text(
                         "*",
-                        style: Theme.of(context).textTheme.subtitle1.copyWith(
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
                               color: Colors.red,
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -74,7 +74,7 @@ class _DDropDownMenuState extends State<DDropDownMenu> {
                 children: [
                   Text(
                     widget.placeHolder,
-                    style: Theme.of(context).textTheme.subtitle1.apply(
+                    style: Theme.of(context).textTheme.bodyText2.apply(
                           color: isSelected
                               ? Colors.black
                               : Theme.of(context).disabledColor,
@@ -98,7 +98,7 @@ class _DDropDownMenuState extends State<DDropDownMenu> {
                   child: Container(
                     width: double.maxFinite,
                     child: Text(e.t(context),
-                        style: Theme.of(context).textTheme.subtitle1),
+                        style: Theme.of(context).textTheme.bodyText2),
                   ),
                 );
               }).toList();

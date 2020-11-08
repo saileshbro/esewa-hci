@@ -10,10 +10,10 @@ class RequiredFieldsBanner extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 4.0),
+          padding: const EdgeInsets.only(bottom: 0.0),
           child: Text(
             "*",
-            style: Theme.of(context).textTheme.subtitle1.copyWith(
+            style: Theme.of(context).textTheme.bodyText2.copyWith(
                   color: Colors.red,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -21,12 +21,12 @@ class RequiredFieldsBanner extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 4.0, left: 12),
+          padding: const EdgeInsets.only(bottom: 4.0, left: 8),
           child: Text(
             TranslationStrings.required.t(context),
             style: Theme.of(context)
                 .textTheme
-                .subtitle1
+                .bodyText2
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         )

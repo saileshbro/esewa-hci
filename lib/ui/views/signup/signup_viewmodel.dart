@@ -38,6 +38,10 @@ class SignupViewModel extends CustomBaseViewModel {
 
   Future<void> onSignupPressed() async {
     await delay(seconds: 2);
+    _navigationService.replaceWith(
+      Routes.authWelcomeView,
+      arguments: AuthWelcomeViewArguments(userFirstName: name),
+    );
   }
 
   void onGenderChanged(String value) {

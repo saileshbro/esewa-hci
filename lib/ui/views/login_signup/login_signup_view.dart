@@ -28,7 +28,7 @@ class LoginSignupView extends StatelessWidget {
                 image: AssetImage(AssetPaths.girlDokoImage),
                 fit: BoxFit.fitHeight,
                 colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.17), BlendMode.darken),
+                    Colors.black.withOpacity(0.24), BlendMode.darken),
               ),
             ),
             child: Padding(
@@ -66,8 +66,10 @@ class LoginSignupView extends StatelessWidget {
                     onTap: model.onSkipPressed,
                     child: Text(
                       TranslationStrings.skip.t(context),
-                      style: Theme.of(context).textTheme.headline6.copyWith(
+                      style: Theme.of(context).textTheme.subtitle1.copyWith(
                             color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.35,
                             decoration: TextDecoration.underline,
                           ),
                     ),

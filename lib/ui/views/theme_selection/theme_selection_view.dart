@@ -27,29 +27,33 @@ class ThemeSelectionView extends StatelessWidget {
           body: Padding(
             padding: sPagePadding,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   padding: sPadding,
-                  height: dimen_140.h,
+                  height: dimen_110.h,
                   width: double.infinity,
                   child: Image.asset(AssetPaths.themeSelectIllustration),
                 ),
-                Text(
-                  TranslationStrings.newDarkMode.t(context),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline5.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                Center(
+                  child: Text(
+                    TranslationStrings.newDarkMode.t(context),
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                  ),
                 ),
+                mHeightSpan,
                 Text(
                   TranslationStrings.enjoyMoreVivid.t(context),
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.left,
                   style: Theme.of(context).textTheme.subtitle1.copyWith(
                         color: Colors.black,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
-                sHeightSpan,
+                llHeightSpan,
                 Text(
                   TranslationStrings.thisWayYouCan.t(context),
                   textAlign: TextAlign.left,
@@ -57,7 +61,7 @@ class ThemeSelectionView extends StatelessWidget {
                         color: Colors.black,
                       ),
                 ),
-                mHeightSpan,
+                lHeightSpan,
                 _Listtile(
                   number: TranslationStrings.num1.t(context),
                   icon: Icons.settings,
@@ -131,25 +135,25 @@ class _Listtile extends StatelessWidget {
           Row(
             children: [
               Text(
-                number,
+                "$number.",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline6.copyWith(
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
               ),
-              sWidthSpan,
+              xsWidthSpan,
               if (icon != null) ...[
                 Icon(
                   icon,
-                  size: dimen_30,
+                  size: dimen_24.w,
                 ),
-                sWidthSpan
+                xsWidthSpan
               ],
               Text(
                 label,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle1.copyWith(
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
                       // fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),

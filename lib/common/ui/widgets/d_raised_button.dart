@@ -13,7 +13,7 @@ class DRaisedButton extends StatelessWidget {
 
   const DRaisedButton({
     @required this.title,
-    @required this.loading,
+    this.loading = false,
     @required this.onPressed,
     this.hasBoxShadow = true,
     this.disabled = false,

@@ -7,6 +7,8 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:auto_route/auto_route.dart';
+import 'package:esewa_hci/ui/views/auth_welcome/auth_welcome_view.dart';
+import 'package:esewa_hci/ui/views/home/home_view.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
@@ -26,6 +28,8 @@ class Routes {
   static const String signupView = '/signup-view';
   static const String welcomeView = '/welcome-view';
   static const String loginSignupView = '/login-signup-view';
+  static const String authWelcomeView = '/auth-welcome-view';
+  static const String homeView = '/home-view';
   static const all = <String>{
     startUpView,
     languageSelectView,
@@ -35,6 +39,8 @@ class Routes {
     signupView,
     welcomeView,
     loginSignupView,
+    authWelcomeView,
+    homeView,
   };
 }
 
@@ -50,6 +56,8 @@ class Router extends RouterBase {
     RouteDef(Routes.signupView, page: SignupView),
     RouteDef(Routes.welcomeView, page: WelcomeView),
     RouteDef(Routes.loginSignupView, page: LoginSignupView),
+    RouteDef(Routes.authWelcomeView, page: AuthWelcomeView),
+    RouteDef(Routes.homeView, page: HomeView),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -102,5 +110,32 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    AuthWelcomeView: (data) {
+      final args = data.getArgs<AuthWelcomeViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AuthWelcomeView(
+          key: args.key,
+          userFirstName: args.userFirstName,
+        ),
+        settings: data,
+      );
+    },
+    HomeView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => HomeView(),
+        settings: data,
+      );
+    },
   };
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// AuthWelcomeView arguments holder class
+class AuthWelcomeViewArguments {
+  final Key key;
+  final String userFirstName;
+  AuthWelcomeViewArguments({this.key, @required this.userFirstName});
 }

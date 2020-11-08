@@ -49,7 +49,7 @@ class WelcomeView extends StatelessWidget {
                   Text(
                     TranslationStrings.esewaRequired.t(context),
                     textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                   lHeightSpan,
                   DTextField(

@@ -107,10 +107,10 @@ class OnboardingView extends StatelessWidget {
                             activeDotColor: Theme.of(context).primaryColor,
                             dotColor: Theme.of(context).primaryColor,
                             paintStyle: PaintingStyle.stroke,
-                            dotHeight: 15.0.w,
-                            dotWidth: 15.0.w,
-                            radius: 15.0.w,
-                            strokeWidth: 1.5,
+                            dotHeight: dimen_12.w,
+                            dotWidth: dimen_12.w,
+                            radius: dimen_12.w,
+                            strokeWidth: dimen_2.w,
                           ),
                         ),
                         xlHeightSpan,
@@ -170,8 +170,8 @@ class _OnboardingFront extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Expanded(flex: 9, child: onboardingModel.displayWidget),
-        mHeightSpan,
+        Expanded(flex: 7, child: onboardingModel.displayWidget),
+        sHeightSpan,
         Expanded(
           flex: 3,
           child: Align(
@@ -193,7 +193,7 @@ class _OnboardingFront extends StatelessWidget {
                   Text(
                     onboardingModel.baseLine.t(context),
                     textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.subtitle2,
                   ),
                 ],
               ),

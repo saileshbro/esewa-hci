@@ -17,32 +17,43 @@ class ThemeText {
         fontSize: dimen_24.sp,
         color: Colors.black,
       );
+  static TextStyle get _blackHeadline4 => _latoTextTheme.headline4.copyWith(
+        fontSize: dimen_34.sp,
+        color: Colors.black,
+      );
 
-  static TextStyle get blackSubtitle1 => _latoTextTheme.subtitle1.copyWith(
+  static TextStyle get _blackSubtitle1 => _latoTextTheme.subtitle1.copyWith(
         fontSize: dimen_16.sp,
+        color: Colors.black,
+      );
+  static TextStyle get _blackSubtitle2 => _latoTextTheme.subtitle2.copyWith(
+        fontSize: dimen_14.sp,
         color: Colors.black,
       );
 
   static TextStyle get _blackButton => _latoTextTheme.button.copyWith(
-        fontSize: dimen_18.sp,
+        fontSize: dimen_14.sp,
         color: Colors.black,
         fontWeight: FontWeight.bold,
-        letterSpacing: 0.5,
       );
 
-  static TextStyle get blackBodyText2 => _latoTextTheme.bodyText2.copyWith(
+  static TextStyle get _blackBodyText2 => _latoTextTheme.bodyText2.copyWith(
         color: Colors.black,
         fontSize: dimen_14.sp,
-        wordSpacing: 0.25,
-        letterSpacing: 0.25,
-        height: 1.5,
+      );
+  static TextStyle get _blackCaption => _latoTextTheme.caption.copyWith(
+        color: Colors.black,
+        fontSize: dimen_12.sp,
       );
 
   static TextTheme getTextTheme() => TextTheme(
-        headline5: _blackHeadline5,
         headline6: _blackHeadline6,
-        subtitle1: blackSubtitle1,
-        bodyText2: blackBodyText2,
+        headline5: _blackHeadline5,
+        headline4: _blackHeadline4,
+        subtitle1: _blackSubtitle1,
+        subtitle2: _blackSubtitle2,
         button: _blackButton,
+        bodyText2: _blackBodyText2,
+        caption: _blackCaption,
       );
 }

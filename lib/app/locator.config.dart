@@ -4,8 +4,10 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:esewa_hci/ui/views/auth_welcome/auth_welcome_viewmodel.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:esewa_hci/ui/views/home/home_viewmodel.dart';
 import 'package:esewa_hci/ui/blocs/language_bloc/language_bloc.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_viewmodel.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_viewmodel.dart';
@@ -30,7 +32,9 @@ Future<GetIt> $initGetIt(
 }) async {
   final gh = GetItHelper(get, environment, environmentFilter);
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
+  gh.lazySingleton<AuthWelcomeViewModel>(() => AuthWelcomeViewModel());
   gh.lazySingleton<DialogService>(() => thirdPartyServicesModule.dialogService);
+  gh.lazySingleton<HomeViewModel>(() => HomeViewModel());
   gh.lazySingleton<LanguageBloc>(() => LanguageBloc());
   gh.lazySingleton<NavigationService>(
       () => thirdPartyServicesModule.navigationService);

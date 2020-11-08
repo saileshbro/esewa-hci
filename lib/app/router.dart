@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:esewa_hci/ui/views/auth_welcome/auth_welcome_view.dart';
+import 'package:esewa_hci/ui/views/home/home_view.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
@@ -18,6 +20,8 @@ import 'package:esewa_hci/ui/views/welcome/welcome_view.dart';
     MaterialRoute(page: SignupView),
     MaterialRoute(page: WelcomeView),
     MaterialRoute(page: LoginSignupView),
+    MaterialRoute(page: AuthWelcomeView),
+    MaterialRoute(page: HomeView),
   ],
   preferRelativeImports: false,
 )

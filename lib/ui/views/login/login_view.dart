@@ -56,7 +56,9 @@ class LoginView extends StatelessWidget {
                       Text(
                         TranslationStrings.enterPhoneMpin.t(context),
                         textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.headline6,
+                        style: Theme.of(context).textTheme.subtitle1.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                       mHeightSpan,
                       DTextField(
@@ -90,7 +92,6 @@ class LoginView extends StatelessWidget {
                         hintText: TranslationStrings.passwordMpin.t(context),
                         required: true,
                         password: true,
-                        textInputType: TextInputType.phone,
                         onChanged: model.onPasswordChanged,
                         enabled: !model.isBusy,
                         validator: (value) {
@@ -113,7 +114,7 @@ class LoginView extends StatelessWidget {
                           child: Text(
                             TranslationStrings.forgotPassword.t(context),
                             style:
-                                Theme.of(context).textTheme.subtitle1.copyWith(
+                                Theme.of(context).textTheme.subtitle2.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: Theme.of(context).primaryColor,
                                       decoration: TextDecoration.underline,
@@ -131,7 +132,7 @@ class LoginView extends StatelessWidget {
                           ),
                           Text(
                             TranslationStrings.rememberMe.t(context),
-                            style: Theme.of(context).textTheme.subtitle1,
+                            style: Theme.of(context).textTheme.bodyText2,
                           )
                         ],
                       ),
@@ -159,9 +160,11 @@ class LoginView extends StatelessWidget {
                               TranslationStrings.signUp.t(context),
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6
+                                  .subtitle1
                                   .copyWith(
                                     color: Theme.of(context).primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.35,
                                     decoration: TextDecoration.underline,
                                   ),
                             ),
@@ -172,9 +175,11 @@ class LoginView extends StatelessWidget {
                               TranslationStrings.back.t(context),
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline6
+                                  .subtitle1
                                   .copyWith(
                                     color: Theme.of(context).primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.35,
                                     decoration: TextDecoration.underline,
                                   ),
                             ),

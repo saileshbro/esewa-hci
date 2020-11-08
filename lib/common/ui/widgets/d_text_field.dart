@@ -52,15 +52,15 @@ class DTextField extends StatelessWidget {
                   ? Padding(
                       padding: const EdgeInsets.only(bottom: 4.0),
                       child: Text(label,
-                          style: Theme.of(context).textTheme.subtitle1),
+                          style: Theme.of(context).textTheme.bodyText2),
                     )
                   : SizedBox.shrink(),
               required
                   ? Padding(
-                      padding: const EdgeInsets.only(bottom: 4.0, left: 4.0),
+                      padding: const EdgeInsets.only(left: 4.0),
                       child: Text(
                         "*",
-                        style: Theme.of(context).textTheme.subtitle1.copyWith(
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
                               color: Colors.red,
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -76,6 +76,7 @@ class DTextField extends StatelessWidget {
             onEditingComplete: onEditingComplete,
             validator: validator,
             onChanged: onChanged,
+            textCapitalization: textCapitalization,
             controller: controller,
             style: Theme.of(context).textTheme.subtitle1,
             obscureText: password,
@@ -84,14 +85,14 @@ class DTextField extends StatelessWidget {
             maxLines: lines,
             minLines: lines,
             decoration: InputDecoration(
-              hintStyle: Theme.of(context).textTheme.subtitle1.apply(
+              hintStyle: Theme.of(context).textTheme.bodyText2.apply(
                     color: Theme.of(context).disabledColor,
                   ),
               prefixIcon: prefixIcon,
               hintText: hintText,
               enabled: enabled,
               suffixIcon: suffixIcon,
-              errorStyle: Theme.of(context).textTheme.subtitle1.apply(
+              errorStyle: Theme.of(context).textTheme.bodyText2.apply(
                     color: Theme.of(context).errorColor,
                   ),
             ),
