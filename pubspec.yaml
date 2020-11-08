@@ -27,6 +27,8 @@ dependencies:
     sdk: flutter
   auto_route: ^0.6.9
   auto_size_text: ^2.1.0
+  badges: ^1.1.4
+  cached_network_image: ^2.3.3
   cupertino_icons: ^1.0.0
   dropdown_menu: ^1.1.1
   easy_rich_text: ^0.5.2

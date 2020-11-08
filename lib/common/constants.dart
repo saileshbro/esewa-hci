@@ -107,6 +107,26 @@ class TranslationStrings {
   static const String internet = "internet";
   static const String airlines = "airlines";
   static const String scan = "scan";
+  static const String settings = "settings";
+  static const String general = "general";
+  static const String appearance = "appearance";
+  static const String chooseYourLight = "chooseYourLight";
+  static const String appNotification = "appNotification";
+  static const String security = "security";
+  static const String changeMPIN = "changeMPIN";
+  static const String changeYour = "changeYour";
+  static const String resetMPIN = "resetMPIN";
+  static const String resetYour = "resetYour";
+  static const String useFingerprint = "useFingerprint";
+  static const String setFingerprint = "setFingerprint";
+  static const String app = "app";
+  static const String checkForUpdate = "checkForUpdate";
+  static const String version = "version";
+  static const String aboutUs = "aboutUs";
+  static const String knowAbouteSewa = "knowAbouteSewa";
+  static const String language = "language";
+  static const String selectLanguage = "selectLanguage";
+  static const String turnOffAll = "turnOffAll";
 }
 
 class AssetPaths {
@@ -144,4 +164,11 @@ class AssetPaths {
   static const String statement = "assets/icons/statement.png";
   static const String topUp = "assets/icons/topUp.png";
   static const String tv = "assets/icons/tv.png";
+  static const String aboutUs = "assets/icons/aboutUs.png";
+  static const String appNotification = "assets/icons/appNotification.png";
+  static const String appearance = "assets/icons/appearance.png";
+  static const String changeMPIN = "assets/icons/changeMPIN.png";
+  static const String checkUpdate = "assets/icons/checkUpdate.png";
+  static const String resetMPIN = "assets/icons/resetMPIN.png";
+  static const String useFingerprint = "assets/icons/useFingerprint.png";
 }

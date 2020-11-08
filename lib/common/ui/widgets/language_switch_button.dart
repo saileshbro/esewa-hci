@@ -32,7 +32,7 @@ class LanguageSwitchButton extends StatelessWidget {
         padding: lPadding.add(lYPadding),
         child: Text(
           label ?? "",
-          style: Theme.of(context).textTheme.headline5.copyWith(
+          style: Theme.of(context).textTheme.headline6.copyWith(
                 fontWeight: FontWeight.bold,
                 color: isSelected ? Colors.white : Colors.black,
               ),

@@ -16,7 +16,7 @@ class HomeStatsWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(dimen_8),
-          boxShadow: getBoxShadow(context, opacity: 0.27),
+          boxShadow: getBoxShadow(context, opacity: 0.2),
           color: Colors.white),
       padding: mPadding,
       child: Row(

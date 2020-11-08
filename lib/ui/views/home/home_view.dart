@@ -1,3 +1,4 @@
+import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
@@ -35,7 +36,8 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
-      viewModelBuilder: () => HomeViewModel(),
+      viewModelBuilder: () => locator<HomeViewModel>(),
+      disposeViewModel: false,
       builder: (
         BuildContext context,
         HomeViewModel model,
@@ -92,7 +94,7 @@ class HomeView extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.more_vert, size: dimen_30),
                     color: Theme.of(context).primaryColor,
-                    onPressed: () {},
+                    onPressed: model.onMorePressed,
                   ),
                 ],
               ),
@@ -134,7 +136,9 @@ class HomeView extends StatelessWidget {
                     ),
               ),
               mHeightSpan,
-              ServiceCategoryWidget(),
+              ServiceCategoryWidget(
+                onCategoryPressed: model.onCategoryPressed,
+              ),
             ],
           ),
         );

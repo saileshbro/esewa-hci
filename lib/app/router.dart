@@ -5,6 +5,8 @@ import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_view.dart';
+import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
+import 'package:esewa_hci/ui/views/settings/settings_view.dart';
 import 'package:esewa_hci/ui/views/signup/signup_view.dart';
 import 'package:esewa_hci/ui/views/startup/startup_view.dart';
 import 'package:esewa_hci/ui/views/theme_selection/theme_selection_view.dart';
@@ -22,6 +24,8 @@ import 'package:esewa_hci/ui/views/welcome/welcome_view.dart';
     MaterialRoute(page: LoginSignupView),
     MaterialRoute(page: AuthWelcomeView),
     MaterialRoute(page: HomeView),
+    MaterialRoute(page: ServiceCategoryView),
+    MaterialRoute(page: SettingsView),
   ],
   preferRelativeImports: false,
 )

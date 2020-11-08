@@ -25,7 +25,6 @@ class TopServicesWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimen_8),
-        boxShadow: getBoxShadow(context, opacity: 0.27),
       ),
       child: Material(
         color: Colors.white,
@@ -38,6 +37,7 @@ class TopServicesWidget extends StatelessWidget {
                   flex: 1,
                   child: InkWell(
                     onTap: () {},
+                    borderRadius: BorderRadius.circular(dimen_8),
                     child: Container(
                       padding: mYPadding
                           .add(const EdgeInsets.symmetric(horizontal: dimen_4)),

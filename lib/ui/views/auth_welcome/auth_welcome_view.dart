@@ -61,14 +61,22 @@ class AuthWelcomeView extends StatelessWidget {
                 ),
                 llHeightSpan,
                 ListTileButton(
-                  icon: Icons.location_on,
+                  icon: Icon(
+                    Icons.location_on,
+                    size: dimen_34.w,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   onPressed: model.onCashPointsPressed,
                   title: TranslationStrings.eSewaCashPoints.t(context),
                   subtitle: TranslationStrings.findTheNearest.t(context),
                 ),
                 llHeightSpan,
                 ListTileButton(
-                  icon: Icons.home_work,
+                  icon: Icon(
+                    Icons.home_work,
+                    size: dimen_34.w,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   onPressed: model.onBankAccountPressed,
                   title: TranslationStrings.bankAccount.t(context),
                   subtitle: TranslationStrings.youCanUseMobile.t(context),

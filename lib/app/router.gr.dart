@@ -13,6 +13,8 @@ import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_view.dart';
+import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
+import 'package:esewa_hci/ui/views/settings/settings_view.dart';
 import 'package:esewa_hci/ui/views/signup/signup_view.dart';
 import 'package:esewa_hci/ui/views/startup/startup_view.dart';
 import 'package:esewa_hci/ui/views/theme_selection/theme_selection_view.dart';
@@ -30,6 +32,8 @@ class Routes {
   static const String loginSignupView = '/login-signup-view';
   static const String authWelcomeView = '/auth-welcome-view';
   static const String homeView = '/home-view';
+  static const String serviceCategoryView = '/service-category-view';
+  static const String settingsView = '/settings-view';
   static const all = <String>{
     startUpView,
     languageSelectView,
@@ -41,6 +45,8 @@ class Routes {
     loginSignupView,
     authWelcomeView,
     homeView,
+    serviceCategoryView,
+    settingsView,
   };
 }
 
@@ -58,6 +64,8 @@ class Router extends RouterBase {
     RouteDef(Routes.loginSignupView, page: LoginSignupView),
     RouteDef(Routes.authWelcomeView, page: AuthWelcomeView),
     RouteDef(Routes.homeView, page: HomeView),
+    RouteDef(Routes.serviceCategoryView, page: ServiceCategoryView),
+    RouteDef(Routes.settingsView, page: SettingsView),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -126,6 +134,22 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    ServiceCategoryView: (data) {
+      final args = data.getArgs<ServiceCategoryViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ServiceCategoryView(
+          key: args.key,
+          category: args.category,
+        ),
+        settings: data,
+      );
+    },
+    SettingsView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SettingsView(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -138,4 +162,11 @@ class AuthWelcomeViewArguments {
   final Key key;
   final String userFirstName;
   AuthWelcomeViewArguments({this.key, @required this.userFirstName});
+}
+
+/// ServiceCategoryView arguments holder class
+class ServiceCategoryViewArguments {
+  final Key key;
+  final String category;
+  ServiceCategoryViewArguments({this.key, @required this.category});
 }

@@ -5,7 +5,12 @@ import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 class ServiceCategoryWidget extends StatelessWidget {
-  final allServices = [
+  final Function(String category) onCategoryPressed;
+  static const allServices = [
+    {
+      "en": "Popular Services",
+      "np": "लोकप्रिय सेवाहरु",
+    },
     {
       "en": "Food and Hospitality",
       "np": "खाना र आथित्य",
@@ -25,10 +30,6 @@ class ServiceCategoryWidget extends StatelessWidget {
     {
       "en": "New Services",
       "np": "नयाँ सेवाहरु",
-    },
-    {
-      "en": "Popular Services",
-      "np": "लोकप्रिय सेवाहरु",
     },
     {
       "en": "Insurance",
@@ -55,12 +56,15 @@ class ServiceCategoryWidget extends StatelessWidget {
       "np": "अनलाईन् खरिदारी",
     },
   ];
-  final colors = [
+  static const colors = [
     Color(0xffD5E8D4),
     Color(0xffFFF4C3),
     Color(0xffA9C4EB),
     Color(0xffF8CECC),
   ];
+
+  const ServiceCategoryWidget({Key key, this.onCategoryPressed})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     String locale = AppLocalizations.of(context).locale.languageCode;
@@ -79,7 +83,7 @@ class ServiceCategoryWidget extends StatelessWidget {
             .map((e) => Material(
                   color: colors[e.key % colors.length],
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () => onCategoryPressed(e.value[locale ?? 'en']),
                     child: Container(
                       padding: const EdgeInsets.only(
                         top: dimen_18,

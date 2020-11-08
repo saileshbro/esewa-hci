@@ -1,3 +1,5 @@
+import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
+import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -55,7 +57,11 @@ class _MyAppState extends State<MyApp> {
                 accentColor: Constants.primaryGreen.withOpacity(0.4),
                 visualDensity: VisualDensity.adaptivePlatformDensity,
                 textTheme: ThemeText.getTextTheme(),
-                appBarTheme: const AppBarTheme(elevation: 0),
+                appBarTheme: const AppBarTheme(
+                    elevation: 0,
+                    iconTheme: IconThemeData(
+                      color: Colors.black,
+                    )),
                 iconTheme: IconThemeData(
                   color: Constants.primaryGreen,
                 ),
