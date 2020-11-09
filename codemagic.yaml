@@ -34,6 +34,7 @@ workflows:
         echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
       - cd . && flutter packages pub get
       - cd . && flutter build appbundle --release
+      - cd . && flutter build apk --release --split-per-abi
       - |
         # generate universal apk signed with debug key
         android-app-bundle build-universal-apk \
@@ -60,3 +61,5 @@ workflows:
         artifact_patterns:
           - '*.apk'
           - '*.ipa'
+          - '*.app'
+          
