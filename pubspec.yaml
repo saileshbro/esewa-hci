@@ -41,6 +41,7 @@ dependencies:
   logger: ^0.9.4
   oktoast: ^2.3.2
   shared_preferences: ^0.5.12+4
+  shimmer: ^1.1.2
   smooth_page_indicator: ^0.2.0
   stacked: ^1.7.6
   stacked_services: ^0.5.4+4

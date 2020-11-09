@@ -6,9 +6,9 @@ import 'package:esewa_hci/app_localizations.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
-import 'package:esewa_hci/ui/views/service_category/mock_popular_service_data.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:stacked/stacked.dart';
 
 class ServiceCategoryView extends StatelessWidget {
@@ -19,8 +19,9 @@ class ServiceCategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context).locale.languageCode;
-    return ViewModelBuilder<ServiceCategoryViewModel>.nonReactive(
+    return ViewModelBuilder<ServiceCategoryViewModel>.reactive(
       viewModelBuilder: () => locator<ServiceCategoryViewModel>(),
+      onModelReady: (model) => model.init(),
       builder: (
         BuildContext context,
         ServiceCategoryViewModel model,
@@ -59,82 +60,107 @@ class ServiceCategoryView extends StatelessWidget {
                     ),
               ),
               mHeightSpan,
-              Wrap(
-                // spacing: dimen_16,
-                alignment: WrapAlignment.spaceBetween,
-                runSpacing: dimen_24,
-                children: popularServices
-                    .map((e) => Container(
-                          width: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
-                          child: Column(
-                            children: [
-                              Container(
-                                height:
-                                    (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
-                                padding: mPadding,
-                                child: InkWell(
-                                  onTap: () {},
-                                  borderRadius: BorderRadius.circular(dimen_8),
-                                  child: Badge(
-                                    showBadge: e.offer != null,
-                                    animationType: BadgeAnimationType.fade,
-                                    badgeContent: Padding(
-                                      padding: EdgeInsets.all(dimen_1),
-                                      child: Text(
-                                        (e.offer ?? "").split(" ").first,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .caption
-                                            .copyWith(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: dimen_10.sp,
-                                            ),
-                                      ),
-                                    ),
-                                    child: Container(
-                                      padding: mPadding,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(dimen_8),
-                                          border: Border.all(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            width: dimen_2.w,
-                                          )),
-                                      child: Center(
-                                        child: CachedNetworkImage(
-                                          imageUrl: e.imageUrl,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              AutoSizeText(
-                                e.displayName[locale ?? 'en'].split('-').first,
-                                maxLines: 1,
-                                textAlign: TextAlign.center,
-                                maxFontSize: Theme.of(context)
-                                    .textTheme
-                                    .subtitle1
-                                    .fontSize
-                                    .ceilToDouble(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .subtitle2
-                                    .copyWith(fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ))
-                    .toList(),
-              )
+              getServicesUi(context, model, locale)
             ],
           ),
         );
       },
     );
+  }
+
+  Widget getServicesUi(
+      BuildContext context, ServiceCategoryViewModel model, String locale) {
+    if (model.isBusy) {
+      return Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        runSpacing: dimen_24,
+        children: List.generate(
+          15,
+          (index) => SizedBox(
+            width: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
+            height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey.withOpacity(0.4),
+              highlightColor: Colors.white,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(dimen_8),
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    } else {
+      return Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        runSpacing: dimen_24,
+        children: model.services
+            .map((e) => Container(
+                  width: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
+                        padding: mPadding,
+                        child: InkWell(
+                          onTap: () {},
+                          borderRadius: BorderRadius.circular(dimen_8),
+                          child: Badge(
+                            showBadge: e.offer != null,
+                            animationType: BadgeAnimationType.fade,
+                            badgeContent: Padding(
+                              padding: EdgeInsets.all(dimen_1),
+                              child: Text(
+                                (e.offer ?? "").split(" ").first,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .caption
+                                    .copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: dimen_10.sp,
+                                    ),
+                              ),
+                            ),
+                            child: Container(
+                              padding: mPadding,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(dimen_8),
+                                  border: Border.all(
+                                    color: Theme.of(context).primaryColor,
+                                    width: dimen_2.w,
+                                  )),
+                              child: Center(
+                                child: CachedNetworkImage(
+                                  imageUrl: e.imageUrl,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AutoSizeText(
+                        e.displayName[locale ?? 'en'].split('-').first,
+                        maxLines: 1,
+                        textAlign: TextAlign.center,
+                        maxFontSize: Theme.of(context)
+                            .textTheme
+                            .subtitle1
+                            .fontSize
+                            .ceilToDouble(),
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle2
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ))
+            .toList(),
+      );
+    }
   }
 }

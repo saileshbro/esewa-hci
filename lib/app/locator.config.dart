@@ -42,7 +42,7 @@ Future<GetIt> $initGetIt(
       () => MultiLanguageSelectViewModel());
   gh.lazySingleton<NavigationService>(
       () => thirdPartyServicesModule.navigationService);
-  gh.lazySingleton<ServiceCategoryViewModel>(() => ServiceCategoryViewModel());
+  gh.factory<ServiceCategoryViewModel>(() => ServiceCategoryViewModel());
   gh.lazySingleton<SettingsViewModel>(
       () => SettingsViewModel(get<NavigationService>()));
   final sharedPreferences = await thirdPartyServicesModule.prefs;

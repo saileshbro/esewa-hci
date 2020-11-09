@@ -22,57 +22,55 @@ class TopServicesWidget extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(dimen_8),
-      ),
-      child: Material(
         color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: services
-              .map(
-                (e) => Expanded(
-                  flex: 1,
-                  child: InkWell(
-                    onTap: () {},
-                    borderRadius: BorderRadius.circular(dimen_8),
-                    child: Container(
-                      padding: mYPadding
-                          .add(const EdgeInsets.symmetric(horizontal: dimen_4)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            e.icon,
-                            height: dimen_18.h,
-                          ),
-                          xsHeightSpan,
-                          AutoSizeText(
-                            e.label.t(context),
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            maxFontSize: Theme.of(context)
-                                .textTheme
-                                .subtitle2
-                                .fontSize
-                                .ceilToDouble(),
-                            style:
-                                Theme.of(context).textTheme.subtitle2.copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                          ),
-                        ],
-                      ),
+        borderRadius: BorderRadius.circular(dimen_8),
+        boxShadow: getBoxShadow(context, opacity: 0.2),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: services
+            .map(
+              (e) => Expanded(
+                flex: 1,
+                child: InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(dimen_8),
+                  child: Container(
+                    padding: mYPadding
+                        .add(const EdgeInsets.symmetric(horizontal: dimen_4)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          e.icon,
+                          height: dimen_18.h,
+                        ),
+                        xsHeightSpan,
+                        AutoSizeText(
+                          e.label.t(context),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          maxFontSize: Theme.of(context)
+                              .textTheme
+                              .subtitle2
+                              .fontSize
+                              .ceilToDouble(),
+                          style: Theme.of(context).textTheme.subtitle2.copyWith(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.w700,
+                              ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              )
-              .toList(),
-        ),
+              ),
+            )
+            .toList(),
       ),
     );
   }
