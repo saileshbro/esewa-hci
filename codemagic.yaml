@@ -9,6 +9,13 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+    triggering:
+      events:
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
     scripts:
       - |
         # set up debug keystore
@@ -48,3 +55,9 @@ workflows:
       email:
         recipients:
           - saileshbro@gmail.com
+      github_releases:
+        prerelease: true
+        artifact_patterns:
+          - '*'
+          - '*.apk'
+          - '*.ipa'
