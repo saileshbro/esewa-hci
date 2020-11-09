@@ -24,6 +24,6 @@ class LanguageSelectViewModel extends CustomBaseViewModel {
   }
 
   void onLanguageSelected() {
-    _navigationService.navigateTo(Routes.themeSelectionView);
+    _navigationService.navigateTo(Routes.onboardingView);
   }
 }
