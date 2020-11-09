@@ -58,6 +58,5 @@ workflows:
       github_releases:
         prerelease: true
         artifact_patterns:
-          - '*'
           - '*.apk'
           - '*.ipa'
