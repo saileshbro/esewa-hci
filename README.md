@@ -1,3 +1,4 @@
+[![Codemagic build status](https://api.codemagic.io/apps/5fa9125fe55b87425fa57b1d/5fa9125fe55b87425fa57b1c/status_badge.svg)](https://codemagic.io/apps/5fa9125fe55b87425fa57b1d/5fa9125fe55b87425fa57b1c/latest_build)
 # esewa_hci
 
 Esewa redesign using HCI principle for HCI course in Kathmandu University
