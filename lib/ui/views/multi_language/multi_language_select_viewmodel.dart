@@ -5,7 +5,6 @@ import 'package:esewa_hci/common/helpers/show_custom_toast.dart';
 import 'package:esewa_hci/models/language_model.dart';
 import 'package:esewa_hci/ui/blocs/language_bloc/language_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:oktoast/oktoast.dart';
 
 @lazySingleton
 class MultiLanguageSelectViewModel extends CustomBaseViewModel {

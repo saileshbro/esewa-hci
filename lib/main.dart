@@ -1,6 +1,4 @@
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
-import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
-import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -14,7 +12,6 @@ import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/theme/text_theme.dart';
 import 'package:esewa_hci/ui/blocs/language_bloc/language_bloc.dart';
-import 'package:esewa_hci/ui/views/home/home_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -96,7 +93,6 @@ class _MyAppState extends State<MyApp> {
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
                 ],
-                home: HomeView(),
               );
             } else {
               return const SizedBox.shrink();

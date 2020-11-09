@@ -110,5 +110,7 @@
   "knowAbouteSewa": "Know about eSewa",
   "language": "Language",
   "selectLanguage": "Select Language",
-  "turnOffAll": "Turn off all the notification"
+  "turnOffAll": "Turn off all the notification",
+  "loginSuccessful": "Login successful",
+  "signupSuccessful": "Signup successful"
 }

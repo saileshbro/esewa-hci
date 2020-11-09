@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class TopServicesWidget extends StatelessWidget {
               (e) => Expanded(
                 flex: 1,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: showNotImplementedToast,
                   borderRadius: BorderRadius.circular(dimen_8),
                   child: Container(
                     padding: mYPadding

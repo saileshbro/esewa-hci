@@ -1,11 +1,17 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
+import 'package:esewa_hci/app/router.gr.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:injectable/injectable.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 @lazySingleton
 class AuthWelcomeViewModel extends CustomBaseViewModel {
-  onCashPointsPressed() {}
+  final NavigationService _navigationService;
 
-  onBankAccountPressed() {}
+  AuthWelcomeViewModel(this._navigationService);
+  onCashPointsPressed() => showNotImplementedToast();
 
-  void onSkipPressed() {}
+  onBankAccountPressed() => showNotImplementedToast();
+
+  void onSkipPressed() => _navigationService.clearStackAndShow(Routes.homeView);
 }

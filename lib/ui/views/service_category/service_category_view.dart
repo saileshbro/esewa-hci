@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/app_localizations.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_viewmodel.dart';
@@ -105,7 +106,7 @@ class ServiceCategoryView extends StatelessWidget {
                         height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
                         padding: mPadding,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: showNotImplementedToast,
                           borderRadius: BorderRadius.circular(dimen_8),
                           child: Badge(
                             showBadge: e.offer != null,

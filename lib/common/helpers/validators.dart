@@ -1,8 +1,16 @@
 bool validatePassword(String value) {
-  if (value == null || value.length < 8) {
-    return false;
+  try {
+    int.tryParse(value, radix: 10);
+    if (value.length != 4) {
+      return false;
+    }
+    return true;
+  } catch (e) {
+    if (value == null || value.length < 8) {
+      return false;
+    }
+    return true;
   }
-  return true;
 }
 
 bool validateName(String value) {

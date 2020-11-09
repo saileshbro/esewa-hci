@@ -127,6 +127,8 @@ class TranslationStrings {
   static const String language = "language";
   static const String selectLanguage = "selectLanguage";
   static const String turnOffAll = "turnOffAll";
+  static const String loginSuccessful = "loginSuccessful";
+  static const String signupSuccessful = "signupSuccessful";
 }
 
 class AssetPaths {

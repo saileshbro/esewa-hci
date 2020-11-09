@@ -13,6 +13,7 @@ class LoginSignupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<LoginSignupViewModel>.reactive(
+      disposeViewModel: false,
       viewModelBuilder: () => locator<LoginSignupViewModel>(),
       builder: (
         BuildContext context,

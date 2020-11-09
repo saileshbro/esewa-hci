@@ -35,7 +35,6 @@ Future<GetIt> $initGetIt(
 }) async {
   final gh = GetItHelper(get, environment, environmentFilter);
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
-  gh.lazySingleton<AuthWelcomeViewModel>(() => AuthWelcomeViewModel());
   gh.lazySingleton<DialogService>(() => thirdPartyServicesModule.dialogService);
   gh.lazySingleton<LanguageBloc>(() => LanguageBloc());
   gh.lazySingleton<MultiLanguageSelectViewModel>(
@@ -59,10 +58,12 @@ Future<GetIt> $initGetIt(
       () => ThemeSelectionViewModel(get<NavigationService>()));
   gh.lazySingleton<WelcomeViewModel>(
       () => WelcomeViewModel(get<NavigationService>()));
+  gh.lazySingleton<AuthWelcomeViewModel>(
+      () => AuthWelcomeViewModel(get<NavigationService>()));
   gh.lazySingleton<HomeViewModel>(
       () => HomeViewModel(get<NavigationService>()));
-  gh.lazySingleton<LanguageSelectViewModel>(
-      () => LanguageSelectViewModel(get<SharedPreferencesService>()));
+  gh.lazySingleton<LanguageSelectViewModel>(() => LanguageSelectViewModel(
+      get<SharedPreferencesService>(), get<NavigationService>()));
   gh.lazySingleton<LoginSignupViewModel>(
       () => LoginSignupViewModel(get<NavigationService>()));
   gh.lazySingleton<LoginViewModel>(

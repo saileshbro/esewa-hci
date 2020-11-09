@@ -17,6 +17,7 @@ class WelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<WelcomeViewModel>.reactive(
       viewModelBuilder: () => locator<WelcomeViewModel>(),
+      disposeViewModel: false,
       builder: (
         BuildContext context,
         WelcomeViewModel model,

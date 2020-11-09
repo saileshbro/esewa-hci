@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:esewa_hci/app/locator.dart';
+import 'package:esewa_hci/app_localizations.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
@@ -19,6 +20,7 @@ class AuthWelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<AuthWelcomeViewModel>.nonReactive(
+      disposeViewModel: false,
       viewModelBuilder: () => locator<AuthWelcomeViewModel>(),
       builder: (
         BuildContext context,
@@ -41,7 +43,11 @@ class AuthWelcomeView extends StatelessWidget {
                   ),
                 ),
                 AutoSizeText(
-                  TranslationStrings.dynDear.t(context, args: ["शैलेश"]),
+                  TranslationStrings.dynDear.t(context, args: [
+                    AppLocalizations.of(context).locale.languageCode == 'np'
+                        ? "प्रयोगकर्ता"
+                        : "User"
+                  ]),
                   maxFontSize: Theme.of(context)
                       .textTheme
                       .headline4

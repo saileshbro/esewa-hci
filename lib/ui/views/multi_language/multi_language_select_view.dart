@@ -39,22 +39,23 @@ class MultiLanguageSelectView extends StatelessWidget {
             ),
           ),
           body: ListView(
-            padding: sPagePadding,
             children: [
-              AutoSizeText(
-                TranslationStrings.selectLanguage.t(context),
-                maxLines: 1,
-                maxFontSize: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .fontSize
-                    .ceilToDouble(),
-                style: Theme.of(context).textTheme.headline4.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+              Padding(
+                padding: sPagePadding,
+                child: AutoSizeText(
+                  TranslationStrings.selectLanguage.t(context),
+                  maxLines: 1,
+                  maxFontSize: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .fontSize
+                      .ceilToDouble(),
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                ),
               ),
-              mHeightSpan,
               _RadioTile(
                 groupValue: model.languageCode,
                 value: 'np',
@@ -120,21 +121,18 @@ class _RadioTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Radio(
-          value: value,
-          groupValue: groupValue,
-          onChanged: onChanged,
-          activeColor: Theme.of(context).primaryColor,
-        ),
-        Text(
-          label,
-          style: Theme.of(context).textTheme.subtitle1.copyWith(
-                color: Colors.black,
-              ),
-        ),
-      ],
+    return RadioListTile(
+      value: value,
+      groupValue: groupValue,
+      onChanged: onChanged,
+      dense: true,
+      activeColor: Theme.of(context).primaryColor,
+      title: Text(
+        label,
+        style: Theme.of(context).textTheme.subtitle1.copyWith(
+              color: Colors.black,
+            ),
+      ),
     );
   }
 }

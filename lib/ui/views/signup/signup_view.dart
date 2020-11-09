@@ -1,6 +1,7 @@
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_custom_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
@@ -31,8 +32,9 @@ class SignupView extends StatelessWidget {
         return Scaffold(
           body: SingleChildScrollView(
             child: Container(
-              height: MediaQuery.of(context).size.height +
-                  2 * ScreenUtil.statusBarHeight,
+              height: ScreenUtil.screenHeight -
+                  kBottomNavigationBarHeight -
+                  dimen_20,
               child: Padding(
                 padding: sPagePadding,
                 child: Form(
@@ -172,63 +174,66 @@ class SignupView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Spacer(),
-                      RequiredFieldsBanner(),
-                      DRaisedButton(
-                          title: TranslationStrings.proceed.t(context),
-                          loading: model.isBusy,
-                          isExpanded: true,
-                          onPressed: () {
-                            if (_formKey.currentState.validate()) {
-                              model.onSignupPressed();
-                            }
-                          },
-                          disabled: !(model.phone.isNotEmpty &&
-                              model.name.isNotEmpty &&
-                              model.gender.isNotEmpty &&
-                              model.isAgreed)),
-                      lHeightSpan,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          GestureDetector(
-                            onTap: model.onLoginPressed,
-                            child: Text(
-                              TranslationStrings.login.t(context),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1
-                                  .copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 0.35,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: locator<NavigationService>().back,
-                            child: Text(
-                              TranslationStrings.back.t(context),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1
-                                  .copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 0.35,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
               ),
             ),
           ),
+          bottomNavigationBar: Container(
+              padding: sPagePadding.add(const EdgeInsets.only(bottom: dimen_8)),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RequiredFieldsBanner(),
+                  DRaisedButton(
+                    title: TranslationStrings.proceed.t(context),
+                    loading: model.isBusy,
+                    isExpanded: true,
+                    onPressed: () {
+                      if (_formKey.currentState.validate()) {
+                        model.onSignupPressed().then((value) => showCustomToast(
+                            message: TranslationStrings.signupSuccessful
+                                .t(context)));
+                      }
+                    },
+                    disabled: !(model.phone.isNotEmpty &&
+                        model.name.isNotEmpty &&
+                        model.gender.isNotEmpty &&
+                        model.isAgreed),
+                  ),
+                  lHeightSpan,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: model.onLoginPressed,
+                        child: Text(
+                          TranslationStrings.login.t(context),
+                          style: Theme.of(context).textTheme.subtitle1.copyWith(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.35,
+                                decoration: TextDecoration.underline,
+                              ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: locator<NavigationService>().back,
+                        child: Text(
+                          TranslationStrings.back.t(context),
+                          style: Theme.of(context).textTheme.subtitle1.copyWith(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.35,
+                                decoration: TextDecoration.underline,
+                              ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )),
         );
       },
     );

@@ -82,7 +82,7 @@ class OnboardingView extends StatelessWidget {
                 children: <Widget>[
                   lHeightSpan,
                   Expanded(
-                    flex: 6,
+                    flex: 7,
                     child: PageView.builder(
                       onPageChanged: model.setIndex,
                       physics: const BouncingScrollPhysics(),
@@ -154,6 +154,7 @@ class OnboardingView extends StatelessWidget {
             ),
           );
         },
+        disposeViewModel: false,
         viewModelBuilder: () => locator<OnboardingViewModel>());
   }
 }
@@ -173,7 +174,7 @@ class _OnboardingFront extends StatelessWidget {
         Expanded(flex: 7, child: onboardingModel.displayWidget),
         sHeightSpan,
         Expanded(
-          flex: 3,
+          flex: 4,
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class OtherServicesWidget extends StatelessWidget {
         itemBuilder: (context, index) => Material(
           color: Colors.white,
           child: InkWell(
-            onTap: () {},
+            onTap: showNotImplementedToast,
             borderRadius: BorderRadius.circular(dimen_8),
             child: Container(
               padding: sPadding,

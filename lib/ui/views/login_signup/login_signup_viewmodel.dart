@@ -16,5 +16,7 @@ class LoginSignupViewModel extends CustomBaseViewModel {
     _navigationService.navigateTo(Routes.loginView);
   }
 
-  void onSkipPressed() {}
+  void onSkipPressed() {
+    _navigationService.navigateTo(Routes.homeView);
+  }
 }

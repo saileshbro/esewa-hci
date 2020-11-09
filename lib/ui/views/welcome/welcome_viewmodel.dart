@@ -12,7 +12,7 @@ class WelcomeViewModel extends CustomBaseViewModel {
   WelcomeViewModel(this._navigationService);
   void onSubmitPressed() async {
     await delay(seconds: 2);
-    _navigationService.clearStackAndShow(Routes.themeSelectionView);
+    _navigationService.clearStackAndShow(Routes.loginSignupView);
   }
 
   void onPhoneChanged(val) {

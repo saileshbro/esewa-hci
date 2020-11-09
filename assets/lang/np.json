@@ -110,5 +110,7 @@
   "language": "भाषा",
   "selectLanguage": "भाषा छनोट गर्नुस",
   "turnOffAll": "सबै सूचनाहरू बन्द गर्नुहोस्",
-  "checkForUpdate": "अपडेटका लागि जाँच गर्नुहोस्"
+  "checkForUpdate": "अपडेटका लागि जाँच गर्नुहोस्",
+  "loginSuccessful": "लगइन सफल",
+  "signupSuccessful": "साइनअप सफल भयो"
 }

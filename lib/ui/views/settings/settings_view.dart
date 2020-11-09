@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/common/ui/widgets/list_tile_button.dart';
@@ -63,12 +64,11 @@ class SettingsView extends StatelessWidget {
                   AssetPaths.appearance,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.appearance.t(context),
                 subtitle: TranslationStrings.chooseYourLight.t(context),
               ),
-              sHeightSpan,
-              xsHeightSpan,
+              lHeightSpan,
               ListTileButton(
                 hasArrow: true,
                 icon: Image.asset(
@@ -79,19 +79,19 @@ class SettingsView extends StatelessWidget {
                 title: TranslationStrings.language.t(context),
                 subtitle: TranslationStrings.selectLanguage.t(context),
               ),
-              sHeightSpan,
-              xsHeightSpan,
+              lHeightSpan,
               ListTileButton(
                 hasArrow: true,
                 icon: Image.asset(
                   AssetPaths.appNotification,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.appNotification.t(context),
                 subtitle: TranslationStrings.turnOffAll.t(context),
               ),
-              lHeightSpan,
+              llHeightSpan,
+              sHeightSpan,
               Text(
                 TranslationStrings.security.t(context),
                 style: Theme.of(context).textTheme.headline6,
@@ -103,35 +103,34 @@ class SettingsView extends StatelessWidget {
                   AssetPaths.changeMPIN,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.changeMPIN.t(context),
                 subtitle: TranslationStrings.changeYour.t(context),
               ),
-              sHeightSpan,
-              xsHeightSpan,
+              lHeightSpan,
               ListTileButton(
                 hasArrow: true,
                 icon: Image.asset(
                   AssetPaths.resetMPIN,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.resetMPIN.t(context),
                 subtitle: TranslationStrings.resetYour.t(context),
               ),
-              sHeightSpan,
-              xsHeightSpan,
+              lHeightSpan,
               ListTileButton(
                 hasArrow: true,
                 icon: Image.asset(
                   AssetPaths.useFingerprint,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.useFingerprint.t(context),
                 subtitle: TranslationStrings.setFingerprint.t(context),
               ),
-              lHeightSpan,
+              llHeightSpan,
+              sHeightSpan,
               Text(
                 TranslationStrings.app.t(context),
                 style: Theme.of(context).textTheme.headline6,
@@ -143,19 +142,18 @@ class SettingsView extends StatelessWidget {
                   AssetPaths.checkUpdate,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.checkForUpdate.t(context),
                 subtitle: TranslationStrings.version.t(context),
               ),
-              sHeightSpan,
-              xsHeightSpan,
+              lHeightSpan,
               ListTileButton(
                 hasArrow: true,
                 icon: Image.asset(
                   AssetPaths.aboutUs,
                   height: dimen_18.h,
                 ),
-                onPressed: () {},
+                onPressed: showNotImplementedToast,
                 title: TranslationStrings.aboutUs.t(context),
                 subtitle: TranslationStrings.knowAbouteSewa.t(context),
               ),

@@ -16,6 +16,7 @@ class LanguageSelectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<LanguageSelectViewModel>.nonReactive(
+      disposeViewModel: false,
       viewModelBuilder: () => locator<LanguageSelectViewModel>(),
       builder: (
         BuildContext context,
@@ -64,7 +65,7 @@ class LanguageSelectView extends StatelessWidget {
                     loading: false,
                     hasBoxShadow: true,
                     disabled: !model.isLanguageSelected,
-                    onPressed: () {},
+                    onPressed: model.onLanguageSelected,
                   ),
                 )
               ],

@@ -1,5 +1,6 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
 import 'package:esewa_hci/app/router.gr.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/helpers/validators.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -28,8 +29,9 @@ class LoginViewModel extends CustomBaseViewModel {
     notifyListeners();
   }
 
-  void onLoginPressed() async {
+  Future<void> onLoginPressed() async {
     await delay(seconds: 2);
+    _navigationService.navigateTo(Routes.homeView);
   }
 
   void onPasswordChanged(String p1) {
@@ -41,5 +43,5 @@ class LoginViewModel extends CustomBaseViewModel {
     _navigationService.replaceWith(Routes.signupView);
   }
 
-  void forgotPasswordPressed() {}
+  void forgotPasswordPressed() => showNotImplementedToast();
 }

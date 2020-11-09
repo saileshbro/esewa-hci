@@ -1,5 +1,6 @@
 import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/common/ui/widgets/home_stats_widget.dart';
@@ -48,6 +49,11 @@ class HomeView extends StatelessWidget {
             context: context,
             locale: Locale('en'),
             child: BottomNavigationBar(
+              onTap: (i) {
+                if (i != 0) {
+                  showNotImplementedToast();
+                }
+              },
               backgroundColor: Colors.white,
               elevation: 4.0,
               type: BottomNavigationBarType.fixed,
@@ -80,6 +86,8 @@ class HomeView extends StatelessWidget {
                   AssetPaths.esewaLogoPath,
                   width: ScreenUtil.screenWidth * 0.35,
                 ),
+                leading: SizedBox.shrink(),
+                leadingWidth: 0,
                 actions: [
                   IconButton(
                     icon: Icon(Icons.search, size: dimen_30),
