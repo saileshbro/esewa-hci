@@ -44,7 +44,7 @@ class AuthWelcomeView extends StatelessWidget {
                 ),
                 AutoSizeText(
                   TranslationStrings.dynDear.t(context, args: [
-                    AppLocalizations.of(context).locale.languageCode == 'np'
+                    AppLocalizations.of(context).locale.languageCode == 'ne'
                         ? "प्रयोगकर्ता"
                         : "User"
                   ]),

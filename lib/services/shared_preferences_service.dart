@@ -1,4 +1,6 @@
 import 'package:esewa_hci/app/logger.dart';
+import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/models/language_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -6,23 +8,26 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SharedPreferencesService {
   final _logger = getLogger("SharedPreferencesService");
   static const String userKey = "USERKEY";
-  static const String totalScannedKey = "TOTALSCANNEDKEY";
   static const String onboardingKey = "ONBOARDINGKEY";
   static const String localeCodeKey = "LOCALECODEKEY";
   final SharedPreferences _preferences;
 
   SharedPreferencesService(this._preferences);
 
-  String get localeCode {
-    final String localeCodeVal = _getFromDisk(localeCodeKey) as String;
-    if (localeCodeVal == null || localeCodeVal.isEmpty) {
-      return null;
+  LanguageModel get locale {
+    final String langCode =
+        (_getFromDisk(localeCodeKey + "lang") as String) ?? "";
+    final String countryCode =
+        (_getFromDisk(localeCodeKey + "coun") as String) ?? "";
+    if (langCode.isEmpty || countryCode.isEmpty) {
+      return Constants.languages.first;
     }
-    return localeCodeVal;
+    return LanguageModel(countryCode: countryCode, languageCode: langCode);
   }
 
-  Future<void> setLocaleCode(String localeCode) async {
-    await _saveToDisk(localeCodeKey, localeCode);
+  Future<void> setLocale(LanguageModel locale) async {
+    await _saveToDisk(localeCodeKey + "lang", locale.languageCode);
+    await _saveToDisk(localeCodeKey + "coun", locale.countryCode);
   }
 
   bool get onboardingVisited {

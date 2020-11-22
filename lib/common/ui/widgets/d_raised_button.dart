@@ -23,6 +23,7 @@ class DRaisedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(title);
     return GestureDetector(
       onTap: disabled || loading ? null : onPressed,
       child: InkWell(

@@ -1,26 +1,29 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
-import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/helpers/show_custom_toast.dart';
 import 'package:esewa_hci/models/language_model.dart';
-import 'package:esewa_hci/ui/blocs/language_bloc/language_bloc.dart';
+import 'package:esewa_hci/services/language_service.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class MultiLanguageSelectViewModel extends CustomBaseViewModel {
-  String _languageCode;
-  init(String currentLanguageCode) {
-    _languageCode = currentLanguageCode;
+  Locale _locale;
+  final LanguageService _languageService;
+
+  MultiLanguageSelectViewModel(this._languageService);
+  init(Locale currentLanguageCode) {
+    _locale = currentLanguageCode;
     notifyListeners();
   }
 
-  get languageCode => _languageCode;
-  void toggleLanguageCode(value) {
-    bool isSupported = Constants.languages.map((e) => e.code).contains(value);
+  get languageCode => _locale;
+  void toggleLanguageCode(LanguageModel model) {
+    bool isSupported = Constants.languages.contains(model);
     if (isSupported) {
-      _languageCode = value;
-      locator<LanguageBloc>()
-          .add(ToggleLanguageEvent(LanguageModel(code: value)));
+      _locale = model;
+      _languageService.changeLocale(model);
+      notifyListeners();
     } else {
       showCustomToast(
           message:

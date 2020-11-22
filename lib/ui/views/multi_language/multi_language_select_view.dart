@@ -4,6 +4,7 @@ import 'package:esewa_hci/app_localizations.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
+import 'package:esewa_hci/models/language_model.dart';
 import 'package:esewa_hci/ui/views/multi_language/multi_language_select_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -13,8 +14,7 @@ class MultiLanguageSelectView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<MultiLanguageSelectViewModel>.reactive(
       disposeViewModel: false,
-      onModelReady: (model) =>
-          model.init(AppLocalizations.of(context).locale.languageCode),
+      onModelReady: (model) => model.init(AppLocalizations.of(context).locale),
       fireOnModelReadyOnce: false,
       viewModelBuilder: () => locator<MultiLanguageSelectViewModel>(),
       builder: (
@@ -58,43 +58,43 @@ class MultiLanguageSelectView extends StatelessWidget {
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'np',
+                value: LanguageModel(languageCode: 'ne', countryCode: "NP"),
                 label: "नेपाली",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'en',
+                value: LanguageModel(languageCode: 'en', countryCode: "US"),
                 label: "English",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'hi',
+                value: LanguageModel(languageCode: 'hi', countryCode: "IN"),
                 label: "हिन्दी",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'mt',
+                value: LanguageModel(languageCode: 'mt', countryCode: "NP"),
                 label: "मैथिली",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'bg',
+                value: LanguageModel(languageCode: 'bg', countryCode: "IN"),
                 label: "বাংলা",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'nb',
+                value: LanguageModel(languageCode: 'nb', countryCode: "NP"),
                 label: "नेवाः भाय्",
                 onChanged: model.toggleLanguageCode,
               ),
               _RadioTile(
                 groupValue: model.languageCode,
-                value: 'bj',
+                value: LanguageModel(languageCode: 'bj', countryCode: "NP"),
                 label: "भोजपुरी",
                 onChanged: model.toggleLanguageCode,
               ),
@@ -107,9 +107,9 @@ class MultiLanguageSelectView extends StatelessWidget {
 }
 
 class _RadioTile extends StatelessWidget {
-  final String groupValue;
-  final String value;
-  final Function(String) onChanged;
+  final LanguageModel groupValue;
+  final LanguageModel value;
+  final Function(LanguageModel) onChanged;
   final String label;
   const _RadioTile({
     Key key,
@@ -121,7 +121,7 @@ class _RadioTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RadioListTile(
+    return RadioListTile<LanguageModel>(
       value: value,
       groupValue: groupValue,
       onChanged: onChanged,

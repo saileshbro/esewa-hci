@@ -8,8 +8,8 @@ class Constants {
   static const Color violet = Color(0xFFA74DBC);
   static const Color textFieldBackgroundColor = Color(0xFFF4F6FA);
   static const languages = [
-    LanguageModel(code: 'en', value: 'English'),
-    LanguageModel(code: 'np', value: 'नेपाली'),
+    LanguageModel(languageCode: 'en', countryCode: 'US'),
+    LanguageModel(languageCode: 'ne', countryCode: 'NP'),
   ];
 }
 

@@ -1,26 +1,24 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
 import 'package:esewa_hci/app/router.gr.dart';
-import 'package:esewa_hci/services/shared_preferences_service.dart';
+import 'package:esewa_hci/models/language_model.dart';
+import 'package:esewa_hci/services/language_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 @lazySingleton
 class LanguageSelectViewModel extends CustomBaseViewModel {
-  final SharedPreferencesService _preferencesService;
   final NavigationService _navigationService;
+  final LanguageService _languageService;
+  LanguageModel get locale => _languageService.locale;
   String _languageCode = "";
 
-  LanguageSelectViewModel(this._preferencesService, this._navigationService);
+  LanguageSelectViewModel(this._navigationService, this._languageService);
 
   get isLanguageSelected => _languageCode.isNotEmpty;
-  void setLanguageCode(String s) async {
-    _languageCode = s;
-    await _preferencesService.setLocaleCode(s);
+  void setLanguageCode(LanguageModel model) async {
+    _languageCode = model.languageCode;
+    _languageService.changeLocale(model);
     notifyListeners();
-  }
-
-  bool isLanguage(String s) {
-    return _languageCode == s;
   }
 
   void onLanguageSelected() {

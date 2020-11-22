@@ -1,11 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
-class LanguageModel {
-  final String code;
-  final String value;
-
-  const LanguageModel({
-    @required this.code,
-    this.value,
-  });
+class LanguageModel extends Locale {
+  const LanguageModel({String languageCode, String countryCode})
+      : super(languageCode, countryCode);
 }

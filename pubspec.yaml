@@ -33,8 +33,6 @@ dependencies:
   device_preview: ^0.4.8
   dropdown_menu: ^1.1.1
   easy_rich_text: ^0.5.2
-  equatable: ^1.2.5
-  flutter_bloc: ^6.0.6
   flutter_dropdown: ^0.0.8
   get_it: ^5.0.1
   google_fonts: ^1.1.1

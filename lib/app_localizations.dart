@@ -32,7 +32,7 @@ class _AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationDelegate();
   @override
   bool isSupported(Locale locale) {
-    return Constants.languages.map((e) => e.code).contains(locale.languageCode);
+    return Constants.languages.contains(locale);
   }
 
   @override
