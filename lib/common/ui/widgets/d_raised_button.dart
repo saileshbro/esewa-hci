@@ -1,6 +1,8 @@
+import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class DRaisedButton extends StatelessWidget {
   final bool loading;
@@ -45,7 +47,9 @@ class DRaisedButton extends StatelessWidget {
               ? Text(
                   title,
                   style: Theme.of(context).textTheme.button.copyWith(
-                        color: Theme.of(context).scaffoldBackgroundColor,
+                        color: !locator<ThemeService>().isDarkMode
+                            ? Colors.white
+                            : Colors.black,
                       ),
                   textAlign: TextAlign.center,
                 )
@@ -53,9 +57,12 @@ class DRaisedButton extends StatelessWidget {
                   height: dimen_48.w,
                   width: dimen_48.w,
                   padding: sPadding,
-                  child: const CircularProgressIndicator(
+                  child: CircularProgressIndicator(
                     strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                        !locator<ThemeService>().isDarkMode
+                            ? Colors.white
+                            : Colors.black),
                   ),
                 ),
         ),

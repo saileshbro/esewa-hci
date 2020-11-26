@@ -11,6 +11,7 @@ class LanguageSelectViewModel extends CustomBaseViewModel {
   final LanguageService _languageService;
   LanguageModel get locale => _languageService.locale;
   String _languageCode = "";
+  String get languageCode => _languageCode;
 
   LanguageSelectViewModel(this._navigationService, this._languageService);
 

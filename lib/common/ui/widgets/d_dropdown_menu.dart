@@ -76,7 +76,7 @@ class _DDropDownMenuState extends State<DDropDownMenu> {
                     widget.placeHolder,
                     style: Theme.of(context).textTheme.bodyText2.apply(
                           color: isSelected
-                              ? Colors.black
+                              ? null
                               : Theme.of(context).disabledColor,
                         ),
                   ),

@@ -1,18 +1,21 @@
 import 'package:esewa_hci/app/custom_base_view_model.dart';
 import 'package:esewa_hci/app/router.gr.dart';
-import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 @lazySingleton
 class ThemeSelectionViewModel extends CustomBaseViewModel {
   final NavigationService _navigationService;
-  AppThemeMode themeMode = AppThemeMode.powerSaving;
+  final ThemeService _themeService;
+  ThemeManagerMode themeMode;
 
-  ThemeSelectionViewModel(this._navigationService);
-  void toggleTheme(AppThemeMode mode) {
+  ThemeSelectionViewModel(this._navigationService, this._themeService) {
+    themeMode = _themeService.selectedThemeMode;
+  }
+  void toggleTheme(ThemeManagerMode mode) {
     themeMode = mode;
-    showNotImplementedToast();
+    _themeService.setThemeMode(mode);
     notifyListeners();
   }
 
@@ -21,5 +24,3 @@ class ThemeSelectionViewModel extends CustomBaseViewModel {
     _navigationService.clearStackAndShow(Routes.welcomeView);
   }
 }
-
-enum AppThemeMode { light, dark, powerSaving }

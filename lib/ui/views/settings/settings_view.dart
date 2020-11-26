@@ -8,6 +8,7 @@ import 'package:esewa_hci/common/ui/widgets/list_tile_button.dart';
 import 'package:esewa_hci/ui/views/settings/settings_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class SettingsView extends StatelessWidget {
   @override
@@ -27,10 +28,12 @@ class SettingsView extends StatelessWidget {
               context: context,
               locale: Locale('en'),
               child: AppBar(
-                backgroundColor: Colors.white,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 centerTitle: true,
                 title: Image.asset(
-                  AssetPaths.esewaLogoPath,
+                  locator<ThemeService>().isDarkMode
+                      ? AssetPaths.esewaLogoDarkPath
+                      : AssetPaths.esewaLogoLightPath,
                   width: ScreenUtil.screenWidth * 0.35,
                 ),
               ),
@@ -49,7 +52,6 @@ class SettingsView extends StatelessWidget {
                     .ceilToDouble(),
                 style: Theme.of(context).textTheme.headline4.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
                     ),
               ),
               mHeightSpan,

@@ -10,6 +10,7 @@ import 'package:esewa_hci/common/ui/widgets/top_services_widget.dart';
 import 'package:esewa_hci/ui/views/home/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class HomeView extends StatelessWidget {
   final bottomNavItems = [
@@ -54,7 +55,6 @@ class HomeView extends StatelessWidget {
                   showNotImplementedToast();
                 }
               },
-              backgroundColor: Colors.white,
               elevation: 4.0,
               type: BottomNavigationBarType.fixed,
               selectedLabelStyle: Theme.of(context)
@@ -81,9 +81,11 @@ class HomeView extends StatelessWidget {
               context: context,
               locale: Locale('en'),
               child: AppBar(
-                backgroundColor: Colors.white,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 title: Image.asset(
-                  AssetPaths.esewaLogoPath,
+                  locator<ThemeService>().isDarkMode
+                      ? AssetPaths.esewaLogoDarkPath
+                      : AssetPaths.esewaLogoLightPath,
                   width: ScreenUtil.screenWidth * 0.35,
                 ),
                 leading: SizedBox.shrink(),
@@ -120,7 +122,6 @@ class HomeView extends StatelessWidget {
                 TranslationStrings.topServices.t(context),
                 style: Theme.of(context).textTheme.subtitle1.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
                     ),
               ),
               mHeightSpan,
@@ -130,7 +131,6 @@ class HomeView extends StatelessWidget {
                 TranslationStrings.otherServices.t(context),
                 style: Theme.of(context).textTheme.subtitle1.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
                     ),
               ),
               mHeightSpan,
@@ -140,7 +140,6 @@ class HomeView extends StatelessWidget {
                 TranslationStrings.allCategories.t(context),
                 style: Theme.of(context).textTheme.subtitle1.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
                     ),
               ),
               mHeightSpan,

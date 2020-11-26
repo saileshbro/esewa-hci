@@ -10,50 +10,55 @@ class ThemeText {
 
   static TextStyle get _blackHeadline6 => _latoTextTheme.headline6.copyWith(
         fontSize: dimen_20.sp,
-        color: Colors.black,
       );
 
   static TextStyle get _blackHeadline5 => _latoTextTheme.headline5.copyWith(
         fontSize: dimen_24.sp,
-        color: Colors.black,
       );
   static TextStyle get _blackHeadline4 => _latoTextTheme.headline4.copyWith(
         fontSize: dimen_34.sp,
-        color: Colors.black,
       );
 
   static TextStyle get _blackSubtitle1 => _latoTextTheme.subtitle1.copyWith(
         fontSize: dimen_16.sp,
-        color: Colors.black,
       );
   static TextStyle get _blackSubtitle2 => _latoTextTheme.subtitle2.copyWith(
         fontSize: dimen_14.sp,
-        color: Colors.black,
       );
 
   static TextStyle get _blackButton => _latoTextTheme.button.copyWith(
         fontSize: dimen_14.sp,
-        color: Colors.black,
         fontWeight: FontWeight.bold,
       );
 
   static TextStyle get _blackBodyText2 => _latoTextTheme.bodyText2.copyWith(
-        color: Colors.black,
         fontSize: dimen_14.sp,
       );
+  static TextStyle get _blackBodyText1 => _latoTextTheme.bodyText2.copyWith(
+        fontSize: dimen_16.sp,
+      );
   static TextStyle get _blackCaption => _latoTextTheme.caption.copyWith(
-        color: Colors.black,
         fontSize: dimen_12.sp,
       );
 
-  static TextTheme getTextTheme() => TextTheme(
-        headline6: _blackHeadline6,
-        headline5: _blackHeadline5,
-        headline4: _blackHeadline4,
-        subtitle1: _blackSubtitle1,
-        subtitle2: _blackSubtitle2,
-        button: _blackButton,
-        bodyText2: _blackBodyText2,
-        caption: _blackCaption,
+  static TextTheme getTextTheme(ThemeMode themeMode) => TextTheme(
+        headline6: _blackHeadline6.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        headline5: _blackHeadline5.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        headline4: _blackHeadline4.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        subtitle1: _blackSubtitle1.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        subtitle2: _blackSubtitle2.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        button: _blackButton.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        bodyText2: _blackBodyText2.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        bodyText1: _blackBodyText1.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
+        caption: _blackCaption.copyWith(
+            color: themeMode == ThemeMode.light ? Colors.black : Colors.white),
       );
 }

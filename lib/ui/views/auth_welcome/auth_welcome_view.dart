@@ -56,7 +56,6 @@ class AuthWelcomeView extends StatelessWidget {
                   maxLines: 1,
                   style: Theme.of(context).textTheme.headline4.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                 ),
                 sHeightSpan,

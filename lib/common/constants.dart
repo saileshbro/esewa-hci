@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class Constants {
   Constants._();
-  static const Color primaryGreen = Color(0xFF41A124);
-  static const Color royalBlue = Color(0xFF604FEF);
-  static const Color violet = Color(0xFFA74DBC);
-  static const Color textFieldBackgroundColor = Color(0xFFF4F6FA);
+  static const Color primaryGreenLight = Color(0xFF41A124);
+  static const Color primaryGreenDark = Color(0xFF96DD81);
+  static const Color backgroundColorLight = Colors.white;
+  static const Color backgroundColorDark = Color(0xff121212);
+  static const Color textFieldBackgroundColorLight = Color(0xFFF4F6FA);
+  static const Color textFieldBackgroundColorDark = Color(0xFF222222);
   static const languages = [
     LanguageModel(languageCode: 'en', countryCode: 'US'),
     LanguageModel(languageCode: 'ne', countryCode: 'NP'),
@@ -129,11 +131,16 @@ class TranslationStrings {
   static const String turnOffAll = "turnOffAll";
   static const String loginSuccessful = "loginSuccessful";
   static const String signupSuccessful = "signupSuccessful";
+  static const String cashback = "cashback";
+  static const String cashbackIsShown = "cashbackIsShown";
+  static const String systemDefault = "systemDefault";
 }
 
 class AssetPaths {
   AssetPaths._();
-  static const String esewaLogoPath = "assets/logos/esewa.png";
+  static const String esewaLogoLightPath = "assets/logos/esewa-light.png";
+  static const String esewaLogoDarkPath = "assets/logos/esewa-dark.png";
+
   static const String loadFundIllustration =
       "assets/illustrations/loadFund.png";
   static const String manyMoreIllustration =

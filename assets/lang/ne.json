@@ -112,5 +112,8 @@
   "turnOffAll": "सबै सूचनाहरू बन्द गर्नुहोस्",
   "checkForUpdate": "अपडेटका लागि जाँच गर्नुहोस्",
   "loginSuccessful": "लगइन सफल",
-  "signupSuccessful": "साइनअप सफल भयो"
+  "signupSuccessful": "साइनअप सफल भयो",
+  "cashback": "नगद फिर्ता",
+  "cashbackIsShown": "नगद फिर्ता प्रस्ताव रातो बबलमा संकेत गरिएको छ।",
+  "systemDefault": "मोबाइलको पूर्वनिर्धारित"
 }

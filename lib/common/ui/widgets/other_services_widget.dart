@@ -44,7 +44,7 @@ class OtherServicesWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: services.length,
         itemBuilder: (context, index) => Material(
-          color: Colors.white,
+          color: Theme.of(context).canvasColor,
           child: InkWell(
             onTap: showNotImplementedToast,
             borderRadius: BorderRadius.circular(dimen_8),
@@ -76,9 +76,7 @@ class OtherServicesWidget extends StatelessWidget {
                         .fontSize
                         .ceilToDouble(),
                     maxLines: 2,
-                    style: Theme.of(context).textTheme.subtitle2.copyWith(
-                          color: Colors.black,
-                        ),
+                    style: Theme.of(context).textTheme.subtitle2,
                   ),
                 ],
               ),

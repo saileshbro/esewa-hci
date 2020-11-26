@@ -24,7 +24,7 @@ class ListTileButton extends StatelessWidget {
       onTap: onPressed,
       child: Ink(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).canvasColor,
           boxShadow: getBoxShadow(context, opacity: 0.25),
           borderRadius: BorderRadius.circular(8),
         ),
@@ -47,7 +47,6 @@ class ListTileButton extends StatelessWidget {
                             style:
                                 Theme.of(context).textTheme.subtitle1.copyWith(
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.black,
                                     ),
                           ),
                           xsHeightSpan,

@@ -187,7 +187,6 @@ class _OnboardingFront extends StatelessWidget {
                     onboardingModel.headLine.t(context),
                     style: Theme.of(context).textTheme.headline4.copyWith(
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
                         ),
                   ),
                   sHeightSpan,

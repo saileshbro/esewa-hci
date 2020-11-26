@@ -44,6 +44,7 @@ dependencies:
   smooth_page_indicator: ^0.2.0
   stacked: ^1.7.6
   stacked_services: ^0.5.4+4
+  stacked_themes: ^0.2.2+1
   youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:

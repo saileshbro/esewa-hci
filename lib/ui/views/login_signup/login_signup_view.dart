@@ -8,6 +8,7 @@ import 'package:esewa_hci/ui/views/login_signup/login_signup_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class LoginSignupView extends StatelessWidget {
   @override
@@ -42,7 +43,9 @@ class LoginSignupView extends StatelessWidget {
                   ),
                   Center(
                     child: Image.asset(
-                      AssetPaths.esewaLogoPath,
+                      locator<ThemeService>().isDarkMode
+                          ? AssetPaths.esewaLogoDarkPath
+                          : AssetPaths.esewaLogoLightPath,
                       width: ScreenUtil.screenWidth * 0.45,
                     ),
                   ),

@@ -7,6 +7,7 @@ import 'package:esewa_hci/ui/views/theme_selection/theme_selection_viewmodel.dar
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class ThemeSelectionView extends StatelessWidget {
   @override
@@ -26,9 +27,7 @@ class ThemeSelectionView extends StatelessWidget {
             loading: model.isBusy,
           ),
           body: ListView(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             padding: sPagePadding.add(EdgeInsets.only(bottom: dimen_64)),
-
             children: [
               Container(
                 padding: sPadding,
@@ -41,7 +40,6 @@ class ThemeSelectionView extends StatelessWidget {
                   TranslationStrings.newDarkMode.t(context),
                   style: Theme.of(context).textTheme.headline5.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                 ),
               ),
@@ -50,7 +48,6 @@ class ThemeSelectionView extends StatelessWidget {
                 TranslationStrings.enjoyMoreVivid.t(context),
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.subtitle1.copyWith(
-                      color: Colors.black,
                       fontWeight: FontWeight.w500,
                     ),
               ),
@@ -58,9 +55,7 @@ class ThemeSelectionView extends StatelessWidget {
               Text(
                 TranslationStrings.thisWayYouCan.t(context),
                 textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.subtitle1.copyWith(
-                      color: Colors.black,
-                    ),
+                style: Theme.of(context).textTheme.subtitle1,
               ),
               lHeightSpan,
               _Listtile(
@@ -85,28 +80,27 @@ class ThemeSelectionView extends StatelessWidget {
                   DRaisedButton(
                     title: TranslationStrings.light.t(context),
                     loading: false,
-                    onPressed: () => model.toggleTheme(AppThemeMode.light),
-                    hasBoxShadow: model.themeMode == AppThemeMode.light,
-                    color: model.themeMode == AppThemeMode.light
+                    onPressed: () => model.toggleTheme(ThemeManagerMode.light),
+                    hasBoxShadow: model.themeMode == ThemeManagerMode.light,
+                    color: model.themeMode == ThemeManagerMode.light
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).disabledColor,
                   ),
                   DRaisedButton(
                     title: TranslationStrings.dark.t(context),
                     loading: false,
-                    onPressed: () => model.toggleTheme(AppThemeMode.dark),
-                    hasBoxShadow: model.themeMode == AppThemeMode.dark,
-                    color: model.themeMode == AppThemeMode.dark
+                    onPressed: () => model.toggleTheme(ThemeManagerMode.dark),
+                    hasBoxShadow: model.themeMode == ThemeManagerMode.dark,
+                    color: model.themeMode == ThemeManagerMode.dark
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).disabledColor,
                   ),
                   DRaisedButton(
-                    title: TranslationStrings.powerSaving.t(context),
+                    title: TranslationStrings.systemDefault.t(context),
                     loading: false,
-                    onPressed: () =>
-                        model.toggleTheme(AppThemeMode.powerSaving),
-                    hasBoxShadow: model.themeMode == AppThemeMode.powerSaving,
-                    color: model.themeMode == AppThemeMode.powerSaving
+                    onPressed: () => model.toggleTheme(ThemeManagerMode.system),
+                    hasBoxShadow: model.themeMode == ThemeManagerMode.system,
+                    color: model.themeMode == ThemeManagerMode.system
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).disabledColor,
                   ),
@@ -140,7 +134,6 @@ class _Listtile extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
                     ),
               ),
               xsWidthSpan,
@@ -154,10 +147,7 @@ class _Listtile extends StatelessWidget {
               Text(
                 label,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText1.copyWith(
-                      // fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ],
           ),

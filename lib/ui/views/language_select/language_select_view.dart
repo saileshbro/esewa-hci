@@ -9,6 +9,7 @@ import 'package:esewa_hci/ui/views/language_select/language_select_viewmodel.dar
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class LanguageSelectView extends StatelessWidget {
   @override
@@ -29,7 +30,9 @@ class LanguageSelectView extends StatelessWidget {
                 lHeightSpan,
                 SizedBox(height: ScreenUtil.statusBarHeight),
                 Image.asset(
-                  AssetPaths.esewaLogoPath,
+                  locator<ThemeService>().isDarkMode
+                      ? AssetPaths.esewaLogoDarkPath
+                      : AssetPaths.esewaLogoLightPath,
                   width: ScreenUtil.screenWidth * 0.45,
                 ),
                 xlHeightSpan,
@@ -38,14 +41,14 @@ class LanguageSelectView extends StatelessWidget {
                   label: "नेपाली भाषाको लागि यहाँ थिच्नुहोस्",
                   onPressed: () => model.setLanguageCode(
                       LanguageModel(countryCode: 'NP', languageCode: 'ne')),
-                  isSelected: model.locale.languageCode == 'ne',
+                  isSelected: model.languageCode == 'ne',
                 ),
                 lHeightSpan,
                 LanguageSwitchButton(
                   label: "Click to select English language",
                   onPressed: () => model.setLanguageCode(
                       LanguageModel(countryCode: 'US', languageCode: 'en')),
-                  isSelected: model.locale.languageCode == 'en',
+                  isSelected: model.languageCode == 'en',
                 ),
                 const Spacer(),
                 Align(

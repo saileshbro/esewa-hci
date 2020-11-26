@@ -1,7 +1,8 @@
-import 'package:esewa_hci/common/constants.dart';
+import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class LanguageSwitchButton extends StatelessWidget {
   final String label;
@@ -21,7 +22,7 @@ class LanguageSwitchButton extends StatelessWidget {
       child: Container(
         width: double.maxFinite,
         decoration: BoxDecoration(
-          color: isSelected ? Constants.primaryGreen : Colors.white,
+          color: isSelected ? Theme.of(context).primaryColor : Colors.white,
           borderRadius: BorderRadius.circular(dimen_12.w),
           boxShadow: getBoxShadow(context, opacity: 0.2),
         ),
@@ -30,7 +31,9 @@ class LanguageSwitchButton extends StatelessWidget {
           label ?? "",
           style: Theme.of(context).textTheme.headline5.copyWith(
                 fontWeight: FontWeight.bold,
-                color: isSelected ? Colors.white : Colors.black,
+                color: isSelected && !locator<ThemeService>().isDarkMode
+                    ? Colors.white
+                    : Colors.black,
               ),
         ),
       ),

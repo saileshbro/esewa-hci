@@ -15,9 +15,10 @@ class HomeStatsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(dimen_8),
-          boxShadow: getBoxShadow(context, opacity: 0.2),
-          color: Colors.white),
+        borderRadius: BorderRadius.circular(dimen_8),
+        boxShadow: getBoxShadow(context, opacity: 0.2),
+        color: Theme.of(context).canvasColor,
+      ),
       padding: mPadding,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,7 +31,6 @@ class HomeStatsWidget extends StatelessWidget {
                     .t(context, args: [balance.toString()]),
                 style: Theme.of(context).textTheme.headline6.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
                     ),
               ),
               xsHeightSpan,
@@ -59,7 +59,6 @@ class HomeStatsWidget extends StatelessWidget {
                 rewardPoints.toString(),
                 style: Theme.of(context).textTheme.headline6.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
                     ),
               ),
               xsHeightSpan,

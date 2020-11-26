@@ -23,6 +23,7 @@ import 'package:esewa_hci/services/shared_preferences_service.dart';
 import 'package:esewa_hci/ui/views/signup/signup_viewmodel.dart';
 import 'package:esewa_hci/ui/views/startup/startup_viewmodel.dart';
 import 'package:esewa_hci/ui/views/theme_selection/theme_selection_viewmodel.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 import 'package:esewa_hci/services/third_party_services.dart';
 import 'package:esewa_hci/ui/views/welcome/welcome_viewmodel.dart';
 
@@ -52,8 +53,7 @@ Future<GetIt> $initGetIt(
       () => thirdPartyServicesModule.snackbarService);
   gh.lazySingleton<StartUpViewModel>(() => StartUpViewModel(
       get<NavigationService>(), get<SharedPreferencesService>()));
-  gh.lazySingleton<ThemeSelectionViewModel>(
-      () => ThemeSelectionViewModel(get<NavigationService>()));
+  gh.lazySingleton<ThemeService>(() => thirdPartyServicesModule.themeService);
   gh.lazySingleton<WelcomeViewModel>(
       () => WelcomeViewModel(get<NavigationService>()));
   gh.lazySingleton<AuthWelcomeViewModel>(
@@ -72,6 +72,8 @@ Future<GetIt> $initGetIt(
       () => MultiLanguageSelectViewModel(get<LanguageService>()));
   gh.lazySingleton<OnboardingViewModel>(() => OnboardingViewModel(
       get<NavigationService>(), get<SharedPreferencesService>()));
+  gh.lazySingleton<ThemeSelectionViewModel>(() =>
+      ThemeSelectionViewModel(get<NavigationService>(), get<ThemeService>()));
   gh.lazySingleton<LanguageSelectViewModel>(() => LanguageSelectViewModel(
       get<NavigationService>(), get<LanguageService>()));
   return get;

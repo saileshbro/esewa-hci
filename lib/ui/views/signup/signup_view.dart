@@ -14,6 +14,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class SignupView extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -46,7 +47,9 @@ class SignupView extends StatelessWidget {
                         height: ScreenUtil.statusBarHeight,
                       ),
                       Image.asset(
-                        AssetPaths.esewaLogoPath,
+                        locator<ThemeService>().isDarkMode
+                            ? AssetPaths.esewaLogoDarkPath
+                            : AssetPaths.esewaLogoLightPath,
                         width: ScreenUtil.screenWidth * 0.45,
                       ),
                       sHeightSpan,
@@ -54,7 +57,6 @@ class SignupView extends StatelessWidget {
                         TranslationStrings.signUp.t(context),
                         style: Theme.of(context).textTheme.headline4.copyWith(
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
                             ),
                       ),
                       sHeightSpan,

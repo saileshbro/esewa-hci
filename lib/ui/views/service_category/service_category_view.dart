@@ -7,16 +7,18 @@ import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
+import 'package:esewa_hci/setup_snackbar.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class ServiceCategoryView extends StatelessWidget {
   final String category;
 
-  const ServiceCategoryView({Key key, @required this.category})
-      : super(key: key);
+  ServiceCategoryView({Key key, @required this.category}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context).locale.languageCode;
@@ -35,10 +37,12 @@ class ServiceCategoryView extends StatelessWidget {
               context: context,
               locale: Locale('en'),
               child: AppBar(
-                backgroundColor: Colors.white,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 centerTitle: true,
                 title: Image.asset(
-                  AssetPaths.esewaLogoPath,
+                  locator<ThemeService>().isDarkMode
+                      ? AssetPaths.esewaLogoDarkPath
+                      : AssetPaths.esewaLogoLightPath,
                   width: ScreenUtil.screenWidth * 0.35,
                 ),
               ),
@@ -57,7 +61,6 @@ class ServiceCategoryView extends StatelessWidget {
                     .ceilToDouble(),
                 style: Theme.of(context).textTheme.headline4.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
                     ),
               ),
               mHeightSpan,
@@ -82,11 +85,11 @@ class ServiceCategoryView extends StatelessWidget {
             height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
             child: Shimmer.fromColors(
               baseColor: Colors.grey.withOpacity(0.4),
-              highlightColor: Colors.white,
+              highlightColor: Theme.of(context).canvasColor,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(dimen_8),
-                  color: Colors.white,
+                  color: Theme.of(context).canvasColor,
                 ),
               ),
             ),
@@ -94,6 +97,16 @@ class ServiceCategoryView extends StatelessWidget {
         ),
       );
     } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        locator<SnackbarService>().showCustomSnackBar(
+          variant: SnackbarType.success,
+          message: TranslationStrings.cashbackIsShown.t(context),
+          title: TranslationStrings.cashback.t(context),
+          mainButtonTitle: TranslationStrings.skip.t(context),
+          onMainButtonTapped: () => locator<NavigationService>().back(),
+          duration: Duration(seconds: 6),
+        );
+      });
       return Wrap(
         alignment: WrapAlignment.spaceBetween,
         runSpacing: dimen_24,

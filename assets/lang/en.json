@@ -112,5 +112,8 @@
   "selectLanguage": "Select Language",
   "turnOffAll": "Turn off all the notification",
   "loginSuccessful": "Login successful",
-  "signupSuccessful": "Signup successful"
+  "signupSuccessful": "Signup successful",
+  "cashback": "Cashback",
+  "cashbackIsShown": "Cashback offer is indicated in red bubble.",
+  "systemDefault": "System Default"
 }

@@ -10,6 +10,7 @@ import 'package:esewa_hci/ui/views/welcome/welcome_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class WelcomeView extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -35,7 +36,9 @@ class WelcomeView extends StatelessWidget {
                     height: ScreenUtil.statusBarHeight,
                   ),
                   Image.asset(
-                    AssetPaths.esewaLogoPath,
+                    locator<ThemeService>().isDarkMode
+                        ? AssetPaths.esewaLogoDarkPath
+                        : AssetPaths.esewaLogoLightPath,
                     width: ScreenUtil.screenWidth * 0.45,
                   ),
                   lHeightSpan,
@@ -43,7 +46,6 @@ class WelcomeView extends StatelessWidget {
                     TranslationStrings.welcome.t(context),
                     style: Theme.of(context).textTheme.headline4.copyWith(
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
                         ),
                   ),
                   sHeightSpan,

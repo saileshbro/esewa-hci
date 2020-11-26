@@ -25,7 +25,7 @@ class TopServicesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).canvasColor,
         borderRadius: BorderRadius.circular(dimen_8),
         boxShadow: getBoxShadow(context, opacity: 0.2),
       ),
