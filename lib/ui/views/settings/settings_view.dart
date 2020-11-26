@@ -66,7 +66,7 @@ class SettingsView extends StatelessWidget {
                   AssetPaths.appearance,
                   height: dimen_18.h,
                 ),
-                onPressed: showNotImplementedToast,
+                onPressed: model.showThemeChangeWidget,
                 title: TranslationStrings.appearance.t(context),
                 subtitle: TranslationStrings.chooseYourLight.t(context),
               ),

@@ -3,6 +3,8 @@ import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:esewa_hci/app/locator.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class TopServicesWidget extends StatelessWidget {
   final services = [
@@ -25,7 +27,9 @@ class TopServicesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
+        color: locator<ThemeService>().isDarkMode
+            ? Theme.of(context).canvasColor
+            : Colors.white,
         borderRadius: BorderRadius.circular(dimen_8),
         boxShadow: getBoxShadow(context, opacity: 0.2),
       ),

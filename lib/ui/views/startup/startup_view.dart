@@ -2,7 +2,6 @@ import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
-import 'package:esewa_hci/setup_snackbar.dart';
 import 'package:esewa_hci/ui/views/startup/startup_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -11,7 +10,6 @@ import 'package:stacked_themes/stacked_themes.dart';
 class StartUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    setupSnackbarUi(context);
     return ViewModelBuilder<StartUpViewModel>.reactive(
       onModelReady: (StartUpViewModel model) => model.handleStartupViewLogic(),
       builder: (BuildContext context, StartUpViewModel model, Widget child) =>

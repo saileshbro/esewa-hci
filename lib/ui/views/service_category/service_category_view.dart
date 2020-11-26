@@ -85,11 +85,15 @@ class ServiceCategoryView extends StatelessWidget {
             height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
             child: Shimmer.fromColors(
               baseColor: Colors.grey.withOpacity(0.4),
-              highlightColor: Theme.of(context).canvasColor,
+              highlightColor: locator<ThemeService>().isDarkMode
+                  ? Theme.of(context).canvasColor
+                  : Colors.white,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(dimen_8),
-                  color: Theme.of(context).canvasColor,
+                  color: locator<ThemeService>().isDarkMode
+                      ? Theme.of(context).canvasColor
+                      : Colors.white,
                 ),
               ),
             ),

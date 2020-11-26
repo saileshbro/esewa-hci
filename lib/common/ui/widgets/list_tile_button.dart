@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:esewa_hci/app/locator.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 class ListTileButton extends StatelessWidget {
   final Widget icon;
@@ -24,7 +26,9 @@ class ListTileButton extends StatelessWidget {
       onTap: onPressed,
       child: Ink(
         decoration: BoxDecoration(
-          color: Theme.of(context).canvasColor,
+          color: locator<ThemeService>().isDarkMode
+              ? Theme.of(context).canvasColor
+              : Colors.white,
           boxShadow: getBoxShadow(context, opacity: 0.25),
           borderRadius: BorderRadius.circular(8),
         ),

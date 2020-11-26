@@ -72,8 +72,8 @@ Future<GetIt> $initGetIt(
       () => MultiLanguageSelectViewModel(get<LanguageService>()));
   gh.lazySingleton<OnboardingViewModel>(() => OnboardingViewModel(
       get<NavigationService>(), get<SharedPreferencesService>()));
-  gh.lazySingleton<ThemeSelectionViewModel>(() =>
-      ThemeSelectionViewModel(get<NavigationService>(), get<ThemeService>()));
+  gh.lazySingleton<ThemeSelectionViewModel>(
+      () => ThemeSelectionViewModel(get<ThemeService>()));
   gh.lazySingleton<LanguageSelectViewModel>(() => LanguageSelectViewModel(
       get<NavigationService>(), get<LanguageService>()));
   return get;

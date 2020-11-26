@@ -15,6 +15,9 @@ class OnboardingViewModel extends IndexTrackingViewModel {
 
   Future<void> onGetStartedPressed() async {
     // await _sharedPreferencesService.setOnboardingVisited();
-    _navigationService.navigateTo(Routes.themeSelectionView);
+    _navigationService.navigateTo(Routes.themeSelectionView,
+        arguments: ThemeSelectionViewArguments(
+            onThemeChanged: () =>
+                _navigationService.clearStackAndShow(Routes.welcomeView)));
   }
 }

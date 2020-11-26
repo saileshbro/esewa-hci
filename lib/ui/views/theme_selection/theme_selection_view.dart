@@ -10,6 +10,10 @@ import 'package:esewa_hci/common/extensions/extensions.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 class ThemeSelectionView extends StatelessWidget {
+  final Function onThemeChanged;
+
+  const ThemeSelectionView({Key key, @required this.onThemeChanged})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<ThemeSelectionViewModel>.reactive(
@@ -22,7 +26,10 @@ class ThemeSelectionView extends StatelessWidget {
       ) {
         return Scaffold(
           floatingActionButton: DFloatingActionButton(
-            onPressed: model.onCheckPressed,
+            onPressed: () async {
+              await model.onCheckPressed();
+              onThemeChanged?.call();
+            },
             child: Icon(Icons.check),
             loading: model.isBusy,
           ),

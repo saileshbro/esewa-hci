@@ -1,4 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:esewa_hci/app/locator.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
@@ -44,7 +46,9 @@ class OtherServicesWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: services.length,
         itemBuilder: (context, index) => Material(
-          color: Theme.of(context).canvasColor,
+          color: locator<ThemeService>().isDarkMode
+              ? Theme.of(context).canvasColor
+              : Colors.white,
           child: InkWell(
             onTap: showNotImplementedToast,
             borderRadius: BorderRadius.circular(dimen_8),

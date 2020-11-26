@@ -11,4 +11,11 @@ class SettingsViewModel extends CustomBaseViewModel {
   onChangeLanguagePressed() {
     _navigationService.navigateTo(Routes.multiLanguageSelectView);
   }
+
+  showThemeChangeWidget() {
+    _navigationService.navigateTo(Routes.themeSelectionView,
+        arguments: ThemeSelectionViewArguments(
+          onThemeChanged: _navigationService.back,
+        ));
+  }
 }

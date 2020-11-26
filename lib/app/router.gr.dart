@@ -93,8 +93,12 @@ class Router extends RouterBase {
       );
     },
     ThemeSelectionView: (data) {
+      final args = data.getArgs<ThemeSelectionViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => ThemeSelectionView(),
+        builder: (context) => ThemeSelectionView(
+          key: args.key,
+          onThemeChanged: args.onThemeChanged,
+        ),
         settings: data,
       );
     },
@@ -166,6 +170,13 @@ class Router extends RouterBase {
 /// ************************************************************************
 /// Arguments holder classes
 /// *************************************************************************
+
+/// ThemeSelectionView arguments holder class
+class ThemeSelectionViewArguments {
+  final Key key;
+  final Function onThemeChanged;
+  ThemeSelectionViewArguments({this.key, @required this.onThemeChanged});
+}
 
 /// AuthWelcomeView arguments holder class
 class AuthWelcomeViewArguments {

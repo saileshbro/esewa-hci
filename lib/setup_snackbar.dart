@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 enum SnackbarType { success, error }
-void setupSnackbarUi(BuildContext context) {
+void setupSnackbarUi(ThemeData themeData) {
   final service = locator<SnackbarService>();
 
   service.registerCustomSnackbarConfig(
     variant: SnackbarType.success,
     config: SnackbarConfig(
-      backgroundColor: Theme.of(context).canvasColor,
-      textColor: Theme.of(context).primaryColor,
+      backgroundColor: themeData.canvasColor,
+      textColor: themeData.primaryColor,
       borderRadius: dimen_8,
-      borderColor: Theme.of(context).primaryColor,
+      borderColor: themeData.primaryColor,
       margin: sPadding,
     ),
   );

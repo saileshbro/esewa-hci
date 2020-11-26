@@ -1,6 +1,7 @@
 import 'package:esewa_hci/common/ui/theme/theme_setup.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/language_view_model.dart';
+import 'package:esewa_hci/setup_snackbar.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:oktoast/oktoast.dart';
@@ -42,7 +43,10 @@ class _MyAppState extends State<MyApp> {
             defaultThemeMode: ThemeMode.light,
             lightTheme: kLightThemeData,
             darkTheme: kDarkThemeData,
-            statusBarColorBuilder: (theme) => theme.scaffoldBackgroundColor,
+            statusBarColorBuilder: (theme) {
+              setupSnackbarUi(theme);
+              return theme.scaffoldBackgroundColor;
+            },
             builder: (context, regularTheme, darkTheme, themeMode) {
               return MaterialApp(
                 title: "Esewa",
