@@ -1,5 +1,6 @@
 import 'package:esewa_hci/common/constants.dart';
 import 'package:esewa_hci/common/ui/theme/text_theme.dart';
+import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 ThemeData kLightThemeData = ThemeData.light().copyWith(
@@ -25,6 +26,16 @@ ThemeData kLightThemeData = ThemeData.light().copyWith(
       borderRadius: BorderRadius.circular(8),
     ),
   ),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: ThemeData.light().canvasColor,
+    elevation: 0,
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(dimen_8),
+        side: BorderSide(
+          color: Constants.primaryGreenLight,
+        )),
+    actionTextColor: Constants.primaryGreenLight,
+  ),
   splashColor: Constants.primaryGreenLight.withOpacity(0.4),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: Constants.primaryGreenLight,
@@ -33,6 +44,17 @@ ThemeData kLightThemeData = ThemeData.light().copyWith(
 ThemeData kDarkThemeData = ThemeData.dark().copyWith(
   unselectedWidgetColor: Constants.primaryGreenDark,
   primaryColor: Constants.primaryGreenDark,
+  disabledColor: Constants.textFieldBackgroundColorDark,
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: ThemeData.dark().canvasColor,
+    elevation: 0,
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(dimen_8),
+        side: BorderSide(
+          color: Constants.primaryGreenDark,
+        )),
+    actionTextColor: Constants.primaryGreenDark,
+  ),
   scaffoldBackgroundColor: Constants.backgroundColorDark,
   accentColor: Constants.primaryGreenDark.withOpacity(0.4),
   visualDensity: VisualDensity.adaptivePlatformDensity,

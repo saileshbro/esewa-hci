@@ -85,9 +85,10 @@ class DTextField extends StatelessWidget {
             maxLines: lines,
             minLines: lines,
             decoration: InputDecoration(
-              hintStyle: Theme.of(context).textTheme.bodyText2.apply(
-                    color: Theme.of(context).disabledColor,
-                  ),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  .apply(color: Theme.of(context).hintColor),
               prefixIcon: prefixIcon,
               hintText: hintText,
               enabled: enabled,

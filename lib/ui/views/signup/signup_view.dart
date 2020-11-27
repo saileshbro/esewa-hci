@@ -144,9 +144,7 @@ class SignupView extends StatelessWidget {
                                   targetString: r"\[(.*)\]",
                                   hasSpecialCharacters: false,
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      print("TOC");
-                                    },
+                                    ..onTap = () {},
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyText2
@@ -159,9 +157,7 @@ class SignupView extends StatelessWidget {
                                 EasyRichTextPattern(
                                   targetString: r"\{(.*)\}",
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      print("PP");
-                                    },
+                                    ..onTap = () {},
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyText2

@@ -4,6 +4,7 @@ import 'package:esewa_hci/ui/views/home/home_view.dart';
 import 'package:esewa_hci/ui/views/language_select/language_select_view.dart';
 import 'package:esewa_hci/ui/views/login/login_view.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_view.dart';
+import 'package:esewa_hci/ui/views/mock_transaction/mock_transaction_view.dart';
 import 'package:esewa_hci/ui/views/multi_language/multi_language_select_view.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_view.dart';
 import 'package:esewa_hci/ui/views/service_category/service_category_view.dart';
@@ -28,6 +29,7 @@ import 'package:esewa_hci/ui/views/welcome/welcome_view.dart';
     MaterialRoute(page: ServiceCategoryView),
     MaterialRoute(page: SettingsView),
     MaterialRoute(page: MultiLanguageSelectView),
+    MaterialRoute(page: MockTransactionView),
   ],
   preferRelativeImports: false,
 )

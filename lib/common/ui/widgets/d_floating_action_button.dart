@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_themes/stacked_themes.dart';
+import "package:esewa_hci/app/locator.dart";
 
 class DFloatingActionButton extends StatelessWidget {
   final Function onPressed;
@@ -17,9 +19,13 @@ class DFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: onPressed,
       child: loading
-          ? const CircularProgressIndicator(
+          ? CircularProgressIndicator(
               strokeWidth: 2,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                !locator<ThemeService>().isDarkMode
+                    ? Colors.white
+                    : Colors.black,
+              ),
             )
           : child,
     );

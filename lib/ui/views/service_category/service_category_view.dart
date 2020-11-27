@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:esewa_hci/app/locator.dart';
 import 'package:esewa_hci/app_localizations.dart';
 import 'package:esewa_hci/common/constants.dart';
-import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
+import 'package:esewa_hci/app/router.gr.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:esewa_hci/setup_snackbar.dart';
@@ -108,7 +108,7 @@ class ServiceCategoryView extends StatelessWidget {
           title: TranslationStrings.cashback.t(context),
           mainButtonTitle: TranslationStrings.skip.t(context),
           onMainButtonTapped: () => locator<NavigationService>().back(),
-          duration: Duration(seconds: 6),
+          duration: Duration(seconds: 3),
         );
       });
       return Wrap(
@@ -123,7 +123,8 @@ class ServiceCategoryView extends StatelessWidget {
                         height: (ScreenUtil.screenWidth - 4 * dimen_16) / 3,
                         padding: mPadding,
                         child: InkWell(
-                          onTap: showNotImplementedToast,
+                          onTap: () => locator<NavigationService>()
+                              .navigateTo(Routes.mockTransactionView),
                           borderRadius: BorderRadius.circular(dimen_8),
                           child: Badge(
                             showBadge: e.offer != null,

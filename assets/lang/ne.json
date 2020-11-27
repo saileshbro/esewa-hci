@@ -115,5 +115,12 @@
   "signupSuccessful": "साइनअप सफल भयो",
   "cashback": "नगद फिर्ता",
   "cashbackIsShown": "नगद फिर्ता प्रस्ताव रातो बबलमा संकेत गरिएको छ।",
-  "systemDefault": "मोबाइलको पूर्वनिर्धारित"
+  "systemDefault": "पूर्वनिर्धारित",
+  "mockTransaction": "नक्कली लेनदेन",
+  "thisIsAMockTransaction": "यो केवल एक नक्कल लेनदेन हो। कुनै पैसा कटौती गरिने छैन।",
+  "clickToPay": "भुक्तान गर्न क्लिक गर्नुहोस्",
+  "transactionIsBeing": "लेनदेन प्रक्रियामा छ।",
+  "cancel": "रद्द गर्नुहोस्",
+  "cancelled": "रद्द गरियो",
+  "transSuccessful": "लेनदेन सफल"
 }

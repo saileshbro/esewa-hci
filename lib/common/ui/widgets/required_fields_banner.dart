@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:esewa_hci/common/extensions/extensions.dart';
 
 class RequiredFieldsBanner extends StatelessWidget {
+  final String requiredField;
+
+  const RequiredFieldsBanner(
+      {Key key, this.requiredField = TranslationStrings.required})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +28,7 @@ class RequiredFieldsBanner extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 4.0, left: 8),
           child: Text(
-            TranslationStrings.required.t(context),
+            requiredField.t(context),
             style: Theme.of(context)
                 .textTheme
                 .bodyText2

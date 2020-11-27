@@ -115,5 +115,12 @@
   "signupSuccessful": "Signup successful",
   "cashback": "Cashback",
   "cashbackIsShown": "Cashback offer is indicated in red bubble.",
-  "systemDefault": "System Default"
+  "systemDefault": "System",
+  "mockTransaction": "Mock Transaction",
+  "thisIsAMockTransaction": "This is just a mock transaction. No money will be deducted.",
+  "clickToPay": "Click to pay",
+  "transactionIsBeing": "Transaction is being processed.",
+  "cancel": "Cancel",
+  "cancelled": "Cancelled",
+  "transSuccessful": "Transaction Successful"
 }

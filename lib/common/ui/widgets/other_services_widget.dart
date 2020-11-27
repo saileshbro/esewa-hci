@@ -2,7 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:esewa_hci/app/locator.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 import 'package:esewa_hci/common/constants.dart';
-import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
+import 'package:esewa_hci/app/router.gr.dart';
+import 'package:stacked_services/stacked_services.dart';
 import 'package:esewa_hci/common/ui/screen_util.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,8 @@ class OtherServicesWidget extends StatelessWidget {
               ? Theme.of(context).canvasColor
               : Colors.white,
           child: InkWell(
-            onTap: showNotImplementedToast,
+            onTap: () => locator<NavigationService>()
+                .navigateTo(Routes.mockTransactionView),
             borderRadius: BorderRadius.circular(dimen_8),
             child: Container(
               padding: sPadding,

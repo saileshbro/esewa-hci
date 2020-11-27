@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:esewa_hci/app/router.gr.dart';
+import 'package:stacked_services/stacked_services.dart';
 import 'package:esewa_hci/common/constants.dart';
-import 'package:esewa_hci/common/helpers/show_not_implemented_toast.dart';
 import 'package:esewa_hci/common/ui/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:esewa_hci/app/locator.dart';
@@ -41,7 +42,8 @@ class TopServicesWidget extends StatelessWidget {
               (e) => Expanded(
                 flex: 1,
                 child: InkWell(
-                  onTap: showNotImplementedToast,
+                  onTap: () => locator<NavigationService>()
+                      .navigateTo(Routes.mockTransactionView),
                   borderRadius: BorderRadius.circular(dimen_8),
                   child: Container(
                     padding: mYPadding

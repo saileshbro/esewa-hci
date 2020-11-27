@@ -85,6 +85,7 @@ class ThemeSelectionView extends StatelessWidget {
                 runSpacing: dimen_24,
                 children: [
                   DRaisedButton(
+                    textColor: Colors.white,
                     title: TranslationStrings.light.t(context),
                     loading: false,
                     onPressed: () => model.toggleTheme(ThemeManagerMode.light),
@@ -94,6 +95,7 @@ class ThemeSelectionView extends StatelessWidget {
                         : Theme.of(context).disabledColor,
                   ),
                   DRaisedButton(
+                    textColor: Colors.white,
                     title: TranslationStrings.dark.t(context),
                     loading: false,
                     onPressed: () => model.toggleTheme(ThemeManagerMode.dark),
@@ -103,6 +105,7 @@ class ThemeSelectionView extends StatelessWidget {
                         : Theme.of(context).disabledColor,
                   ),
                   DRaisedButton(
+                    textColor: Colors.white,
                     title: TranslationStrings.systemDefault.t(context),
                     loading: false,
                     onPressed: () => model.toggleTheme(ThemeManagerMode.system),

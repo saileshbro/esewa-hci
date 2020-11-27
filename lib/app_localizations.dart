@@ -10,7 +10,7 @@ class AppLocalizations {
   static AppLocalizations of(BuildContext context) =>
       Localizations.of<AppLocalizations>(context, AppLocalizations);
 
-  String translate(String key) => _localizedStrings[key];
+  String translate(String key) => _localizedStrings[key] ?? key;
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationDelegate();
   Map<String, String> _localizedStrings;

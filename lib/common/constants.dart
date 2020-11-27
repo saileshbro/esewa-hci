@@ -17,6 +17,8 @@ class Constants {
 
 class TranslationStrings {
   TranslationStrings._();
+  static const String thisIsAMockTransaction = "thisIsAMockTransaction";
+  static const String clickToPay = "clickToPay";
   static const String passwordMpinInvalid = "passwordMpinInvalid";
   static const String allCategories = "allCategories";
   static const String passwordMpinRequired = "passwordMpinRequired";
@@ -134,6 +136,11 @@ class TranslationStrings {
   static const String cashback = "cashback";
   static const String cashbackIsShown = "cashbackIsShown";
   static const String systemDefault = "systemDefault";
+  static const String mockTransaction = "mockTransaction";
+  static const String transactionIsBeing = "transactionIsBeing";
+  static const String cancel = "cancel";
+  static const String cancelled = "cancelled";
+  static const String transSuccessful = "transSuccessful";
 }
 
 class AssetPaths {

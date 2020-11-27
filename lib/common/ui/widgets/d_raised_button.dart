@@ -12,6 +12,7 @@ class DRaisedButton extends StatelessWidget {
   final bool disabled;
   final bool isExpanded;
   final Color color;
+  final Color textColor;
 
   const DRaisedButton({
     @required this.title,
@@ -21,11 +22,11 @@ class DRaisedButton extends StatelessWidget {
     this.disabled = false,
     this.isExpanded = false,
     this.color,
+    this.textColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    print(title);
     return GestureDetector(
       onTap: disabled || loading ? null : onPressed,
       child: InkWell(
@@ -47,9 +48,13 @@ class DRaisedButton extends StatelessWidget {
               ? Text(
                   title,
                   style: Theme.of(context).textTheme.button.copyWith(
-                        color: !locator<ThemeService>().isDarkMode
-                            ? Colors.white
-                            : Colors.black,
+                        color: textColor != null
+                            ? textColor
+                            : !locator<ThemeService>().isDarkMode
+                                ? Colors.white
+                                : disabled
+                                    ? Colors.white
+                                    : Colors.black,
                       ),
                   textAlign: TextAlign.center,
                 )

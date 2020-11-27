@@ -19,7 +19,6 @@ class LanguageService {
       return;
     }
     _locale = _sharedPreferencesService.locale;
-    print(_locale);
     _languageStream.add(_locale);
     return;
   }

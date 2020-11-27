@@ -13,6 +13,7 @@ import 'package:esewa_hci/services/language_service.dart';
 import 'package:esewa_hci/language_view_model.dart';
 import 'package:esewa_hci/ui/views/login_signup/login_signup_viewmodel.dart';
 import 'package:esewa_hci/ui/views/login/login_viewmodel.dart';
+import 'package:esewa_hci/ui/views/mock_transaction/mock_transaction_viewmodel.dart';
 import 'package:esewa_hci/ui/views/multi_language/multi_language_select_viewmodel.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:esewa_hci/ui/views/onboarding/onboarding_viewmodel.dart';
@@ -38,6 +39,7 @@ Future<GetIt> $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
   gh.lazySingleton<DialogService>(() => thirdPartyServicesModule.dialogService);
+  gh.factory<MockTransactionViewModel>(() => MockTransactionViewModel());
   gh.lazySingleton<NavigationService>(
       () => thirdPartyServicesModule.navigationService);
   gh.factory<ServiceCategoryViewModel>(() => ServiceCategoryViewModel());
