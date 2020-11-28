@@ -19,15 +19,15 @@ class MockTransactionView extends StatelessWidget {
       "Username": "saileshbro",
       "Customer Name": "Sailesh Dahal",
       "Plan": "Supereme 20MBPS",
-      "Amount": "NPR 2013.00",
-      "Total Paying Amount": "NPR 2013.00"
+      "Amount": "NPR 201.00",
+      "Total Paying Amount": "NPR 201.00"
     },
     "ne_NP": {
       "प्रयोगकर्ता नाम": "saileshbro",
       "ग्राहकको नाम": "Sailesh Dahal",
       "योजना": "सर्वोच्च २०MBPS",
-      "रकम": "NPR २०१.००",
-      "कुल भुक्तानी रकम": "NPR २०१.००"
+      "रकम": "रू २०१.००",
+      "कुल भुक्तानी रकम": "रू २०१.००"
     }
   };
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -146,6 +146,7 @@ class MockTransactionView extends StatelessWidget {
                 DRaisedButton(
                   title: TranslationStrings.clickToPay.t(context),
                   onPressed: () {
+                    model.reset();
                     _scaffoldKey.currentState
                         .showSnackBar(SnackBar(
                           action: SnackBarAction(

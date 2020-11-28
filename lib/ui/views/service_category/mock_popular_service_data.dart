@@ -11,7 +11,7 @@ final List<Showcase> popularServices = [
   Showcase(
       displayName: {
         "en": "NEPAL MEDICAL COUNCIL - LICENSE/SPECIAL EXAMINATION ( TOKEN )",
-        "ne": "नेपाल मेडिकल काउन्सिल-लाइसेन्स/विशेष परीक्षा (टोकन)"
+        "ne": "नेपाल मेडिकल कन्सिल-लाइसेन्स/विशेष परीक्षा (टोकन)"
       },
       imageUrl:
           "https://cdn.esewa.com.np/ui/images/logos/merchants/NMC_new.png"),
@@ -21,7 +21,7 @@ final List<Showcase> popularServices = [
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/DOLRKeqrdfQAyUoMdyZn272.jpg 1.jpg"),
   Showcase(
-      displayName: {"en": "Daraz", "ne": "दराज "},
+      displayName: {"en": "Daraz", "ne": "दराज"},
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/sQ7GRf3wvnkVyWQoRyiMLogo.png"),
   Showcase(
@@ -37,16 +37,19 @@ final List<Showcase> popularServices = [
           "https://cdn.esewa.com.np//ui/images/logos/merchants/ClFqxAntx0cRiG3Yhrro272 dharan sub metro.jpg"),
   Showcase(
       offer: "9% Cashback",
-      displayName: {"en": "Ncell Pack", "ne": "एन्सेल प्याक्"},
+      displayName: {"en": "Ncell Pack", "ne": "एनसेल प्याक"},
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/xCzjx3YDTzZyMvXfvlgXncell-logo (2).png"),
   Showcase(
-      displayName: {"en": "Meroshare Renew", "ne": "मेरो सेअर नवीकरण"},
+      displayName: {
+        "en": "Meroshare Renew",
+        "ne": "मेरोसेयर नवीकरण",
+      },
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/nGXXaBtEI8eTAP6XaPoRdownload.jpg"),
   Showcase(
       offer: "4% Cashback",
-      displayName: {"en": "BBN", "ne": "बि बि एन्"},
+      displayName: {"en": "BBN", "ne": "बीबीएन"},
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/zCtnxj5SbuAUAHVidpQ90-02-03-d738de29ea6787eb20513ead387b9524399584a5d27d694d25044da767a60f6d_fbb7a995.jpg"),
   Showcase(
@@ -73,11 +76,11 @@ final List<Showcase> popularServices = [
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/DwyGjuo1JOlr4WiDdwDbsimtv_new.jpg"),
   Showcase(
-      displayName: {"en": "Vianet Payment", "ne": "भियानेट भुक्तानी"},
+      displayName: {"en": "Vianet Payment", "ne": "भायानेट भुक्तानी"},
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/Y0ueKETdfTteqdB0MO24latest logo.jpg"),
   Showcase(
-      displayName: {"en": "Cablenet Payment", "ne": "केवलनेट भुक्तानी"},
+      displayName: {"en": "Cablenet Payment", "ne": "केबलनेट भुक्तानी"},
       imageUrl:
           "https://cdn.esewa.com.np//ui/images/logos/merchants/rJmNdmkQ6OMXkXl4DMExSubisu Logo.png"),
   Showcase(

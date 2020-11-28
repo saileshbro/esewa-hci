@@ -9,31 +9,31 @@ class ServiceCategoryWidget extends StatelessWidget {
   static const allServices = [
     {
       "en": "Popular Services",
-      "ne": "लोकप्रिय सेवाहरु",
+      "ne": "लोकप्रिय सेवाहरू",
     },
     {
       "en": "Food and Hospitality",
-      "ne": "खाना र आथित्य",
+      "ne": "खाना र आतिथ्य",
     },
     {
       "en": "Stock Broker Payment",
-      "ne": "ब्रोकर भुक्तानी",
+      "ne": "शेयर ब्रोकर भुक्तानी",
     },
     {
       "en": "Scan and Pay",
-      "ne": "स्क्यान गरी भुक्तान",
+      "ne": "स्क्यान र भुक्तान",
     },
     {
       "en": "Movies",
-      "ne": "चलचित्र",
+      "ne": "चलचित्रहरू",
     },
     {
       "en": "New Services",
-      "ne": "नयाँ सेवाहरु",
+      "ne": "नयाँ सेवाहरू",
     },
     {
       "en": "Insurance",
-      "ne": "बिमा",
+      "ne": "बीमा",
     },
     {
       "en": "Health",
@@ -41,19 +41,19 @@ class ServiceCategoryWidget extends StatelessWidget {
     },
     {
       "en": "Utility Bill Payment",
-      "ne": "बिल भुक्तानी",
+      "ne": "बिल भुक्तान",
     },
     {
       "en": "Antivirus",
-      "ne": "एन्टी भइरस",
+      "ne": "एन्टिभाइरस",
     },
     {
       "en": "Internet Bill",
-      "ne": "इन्टरनेट बिल",
+      "ne": "इन्टर्नेट बिल",
     },
     {
       "en": "Online Shopping",
-      "ne": "अनलाईन् खरिदारी",
+      "ne": "अनलाइन शपिंग",
     },
   ];
   static const colors = [

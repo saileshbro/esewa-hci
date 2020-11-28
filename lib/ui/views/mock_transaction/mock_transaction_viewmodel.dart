@@ -6,7 +6,7 @@ class MockTransactionViewModel extends CustomBaseViewModel {
   MockTransactionViewModel();
   bool _hasCancelled = false;
   void onPayPressed() {}
-
+  void reset() => _hasCancelled = false;
   void cancelled() {
     _hasCancelled = true;
   }
